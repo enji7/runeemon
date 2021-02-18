@@ -13,18 +13,20 @@ final class RuntimeData {
   private String deploymentDir;
   private String startCommand;
   private String stopCommand; 
+  private String startForegroundCommand;
   private String port;
   private String welcomePage;
   private String logDir;
 
   RuntimeData(String name, String version, String downloadUrl, String deploymentDir, String startCommand,
-      String stopCommand, String port, String welcomePage, String logDir) {
+      String stopCommand, String startForegroundCommand, String port, String welcomePage, String logDir) {
     this.name = name;
     this.version = version;
     this.downloadUrl = downloadUrl;
     this.deploymentDir = deploymentDir;
     this.startCommand = startCommand;
     this.stopCommand = stopCommand;
+    this.startForegroundCommand = startForegroundCommand;
     this.port = port;
     this.welcomePage = welcomePage;
     this.logDir = logDir;
@@ -64,6 +66,10 @@ final class RuntimeData {
 
   public String getLogDir() {
     return logDir;
+  }
+
+  public String getStartForegroundCommand() {
+    return startForegroundCommand;
   }
   
 }

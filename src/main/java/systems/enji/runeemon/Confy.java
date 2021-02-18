@@ -11,8 +11,9 @@ class Confy {
           "22.0.1.Final", 
           "https://download.jboss.org/wildfly/22.0.1.Final/wildfly-22.0.1.Final.zip",
           "/standalone/deployments/",
-          "/bin/standalone.sh",
           "",
+          "",
+          "/bin/standalone.sh",
           "8080",
           "",
           ""),
@@ -23,10 +24,10 @@ class Confy {
           "/domains/domain1/autodeploy/",
           "/bin/asadmin start-domain",
           "/bin/asadmin stop-domain",
+          "",
           "8080",
           "",
           ""),
-      // TODO: check TomEE auto-deploy
       new RuntimeData(
           "tomee", 
           "8.0.6", 
@@ -34,6 +35,7 @@ class Confy {
           "/webapps/",
           "/bin/startup.sh",
           "/bin/shutdown.sh",
+          "/bin/catalina.sh run",
           "8080",
           "http://localhost:8080/",
           "/logs/")
