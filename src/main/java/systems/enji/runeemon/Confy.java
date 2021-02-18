@@ -13,7 +13,9 @@ class Confy {
           "/standalone/deployments/",
           "/bin/standalone.sh",
           "",
-          "8080"),
+          "8080",
+          "",
+          ""),
       new RuntimeData(
           "payara", 
           "5.2021.1", 
@@ -21,7 +23,20 @@ class Confy {
           "/domains/domain1/autodeploy/",
           "/bin/asadmin start-domain",
           "/bin/asadmin stop-domain",
-          "8080")
+          "8080",
+          "",
+          ""),
+      // TODO: check TomEE auto-deploy
+      new RuntimeData(
+          "tomee", 
+          "8.0.6", 
+          "https://mirror.klaus-uwe.me/apache/tomee/tomee-8.0.6/apache-tomee-8.0.6-plume.zip",
+          "/webapps/",
+          "/bin/startup.sh",
+          "/bin/shutdown.sh",
+          "8080",
+          "http://localhost:8080/",
+          "/logs/")
   };
   
   /**

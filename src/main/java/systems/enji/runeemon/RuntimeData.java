@@ -2,6 +2,7 @@ package systems.enji.runeemon;
 
 /**
  * Holds configuration data for a single runtime.
+ * TODO: read from JSON config (more readable)
  * TODO: switch to a newer Java version and use a record instead.
  */
 final class RuntimeData {
@@ -13,10 +14,11 @@ final class RuntimeData {
   private String startCommand;
   private String stopCommand; 
   private String port;
-  // TODO
-  private String logFile;
+  private String welcomePage;
+  private String logDir;
 
-  RuntimeData(String name, String version, String downloadUrl, String deploymentDir, String startCommand, String stopCommand, String port) {
+  RuntimeData(String name, String version, String downloadUrl, String deploymentDir, String startCommand,
+      String stopCommand, String port, String welcomePage, String logDir) {
     this.name = name;
     this.version = version;
     this.downloadUrl = downloadUrl;
@@ -24,6 +26,8 @@ final class RuntimeData {
     this.startCommand = startCommand;
     this.stopCommand = stopCommand;
     this.port = port;
+    this.welcomePage = welcomePage;
+    this.logDir = logDir;
   }
 
   String getName() {
@@ -52,6 +56,14 @@ final class RuntimeData {
 
   public String getStopCommand() {
     return stopCommand;
+  }
+
+  public String getWelcomePage() {
+    return welcomePage;
+  }
+
+  public String getLogDir() {
+    return logDir;
   }
   
 }
