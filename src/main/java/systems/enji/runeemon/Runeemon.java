@@ -10,11 +10,9 @@ import java.util.logging.Logger;
  * 
  * TODO:
  * - more runtimes:
- *   - Open Liberty
  *   - Quarkus
  *   - Helidon
  *   - Micronaut
- *   - TomEE 
  *   - KumuluzEE
  * - default operation:
  *   - for all configured runtimes (or those given on command line)... 

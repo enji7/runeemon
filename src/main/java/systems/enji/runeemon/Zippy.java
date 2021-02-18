@@ -65,9 +65,6 @@ class Zippy {
       }
     }
 
-    // TODO: prevent double dir problem, emulate "extract here";
-    // how to: if the zip contains exactly one root element, which is a dir: use this as target dir
-    
     System.out.println("extraction complete");
     
   }

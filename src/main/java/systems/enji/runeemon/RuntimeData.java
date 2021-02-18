@@ -2,8 +2,7 @@ package systems.enji.runeemon;
 
 /**
  * Holds configuration data for a single runtime.
- * TODO: read from JSON config (more readable)
- * TODO: switch to a newer Java version and use a record instead.
+ * As soon as Java 17 LTS is released, use a record instead.
  */
 final class RuntimeData {
 
@@ -17,9 +16,10 @@ final class RuntimeData {
   private String port;
   private String welcomePage;
   private String logDir;
+  private String config;
 
   RuntimeData(String name, String version, String downloadUrl, String deploymentDir, String startCommand,
-      String stopCommand, String startForegroundCommand, String port, String welcomePage, String logDir) {
+      String stopCommand, String startForegroundCommand, String port, String welcomePage, String logDir, String config) {
     this.name = name;
     this.version = version;
     this.downloadUrl = downloadUrl;
@@ -30,6 +30,7 @@ final class RuntimeData {
     this.port = port;
     this.welcomePage = welcomePage;
     this.logDir = logDir;
+    this.config = config;
   }
 
   String getName() {
@@ -44,32 +45,36 @@ final class RuntimeData {
     return downloadUrl;
   }
 
-  public String getDeploymentDir() {
+  String getDeploymentDir() {
     return deploymentDir;
   }
 
-  public String getStartCommand() {
+  String getStartCommand() {
     return startCommand;
   }
 
-  public String getPort() {
+  String getPort() {
     return port;
   }
 
-  public String getStopCommand() {
+  String getStopCommand() {
     return stopCommand;
   }
 
-  public String getWelcomePage() {
+  String getWelcomePage() {
     return welcomePage;
   }
 
-  public String getLogDir() {
+  String getLogDir() {
     return logDir;
   }
 
-  public String getStartForegroundCommand() {
+  String getStartForegroundCommand() {
     return startForegroundCommand;
+  }
+
+  String getConfig() {
+    return config;
   }
   
 }

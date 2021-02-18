@@ -2,10 +2,12 @@ package systems.enji.runeemon;
 
 /**
  * Provides configuration data for the other operations.
+ * TODO: read from JSON config file (for better readability without IDE support)
  */
 class Confy {
 
   private static RuntimeData[] runtimeList = {
+      
       new RuntimeData(
           "wildfly", 
           "22.0.1.Final", 
@@ -15,8 +17,10 @@ class Confy {
           "",
           "/bin/standalone.sh",
           "8080",
-          "",
-          ""),
+          "http://localhost:8080/",
+          "/standalone/log/",
+          "/standalone/configuration/standalone.xml"),
+      
       new RuntimeData(
           "payara", 
           "5.2021.1", 
@@ -26,8 +30,10 @@ class Confy {
           "/bin/asadmin stop-domain",
           "",
           "8080",
-          "",
-          ""),
+          "http://localhost:8080/",
+          "/glassfish/domains/domain1/logs",
+          "/glassfish/domains/domain1/config/"),
+      
       new RuntimeData(
           "tomee", 
           "8.0.6", 
@@ -38,7 +44,22 @@ class Confy {
           "/bin/catalina.sh run",
           "8080",
           "http://localhost:8080/",
-          "/logs/")
+          "/logs/",
+          "/conf/"),
+      
+      new RuntimeData(
+          "openliberty", 
+          "21.0.0.1", 
+          "https://public.dhe.ibm.com/ibmdl/export/pub/software/openliberty/runtime/release/2021-01-13_1459/openliberty-21.0.0.1.zip",
+          "/usr/servers/defaultServer/dropins/",
+          "/bin/server start",
+          "/bin/server stop",
+          "/bin/server run",
+          "9080",
+          "http://localhost:9080/",
+          "/usr/servers/defaultServer/logs",
+          "/usr/servers/defaultServer/server.xml")
+      
   };
   
   /**
