@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 
 /**
  * Downloads and extracts a list of configured Java EE runtimes.
- * Requires no additional dependencies.
+ * Requires no additional dependencies (TODO: we will need a dependency for JSON config...).
  * 
  * TODO:
  * - more runtimes:

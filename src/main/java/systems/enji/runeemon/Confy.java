@@ -2,7 +2,7 @@ package systems.enji.runeemon;
 
 /**
  * Provides configuration data for the other operations.
- * TODO: read from JSON config file (for better readability without IDE support)
+ * TODO: read from JSON config file (for better readability without IDE support); would require dependency...
  */
 class Confy {
 

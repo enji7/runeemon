@@ -1,0 +1,15 @@
+[
+  {
+    "name" : "",
+    "version" : "",
+    "downloadUrl" : "",
+    "deploymentDir" : "",
+    "startForegroundCommand" : "",
+    "startBackgroundCommand" : "",
+    "stopCommand" : "",
+    "port" : "",
+    "welcomePage" : "",
+    "logDir" : "",
+    "configDir" : ""
+  }
+]
