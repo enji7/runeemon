@@ -19,8 +19,13 @@ class Zippy {
   /**
    * Unzips the given downloaded package, using meta data for the given runtime.
    */
-  static void unzip(Path downloadedPackage, RuntimeData runtimeData) throws IOException {
+  static void run(CommandData cd, Path downloadedPackage, RuntimeData runtimeData) throws IOException {
     
+    // check if I have to do anything
+    if (!cd.getExtract()) {
+      return;
+    }
+
     // prepare destination directory
     File destDir = new File("runtimes/extracted", runtimeData.getName() + "-" + runtimeData.getVersion());
     if (destDir.exists()) {

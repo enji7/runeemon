@@ -1,6 +1,7 @@
 package systems.enji.runeemon;
 
 import java.nio.file.Path;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -39,12 +40,17 @@ public class Runeemon {
   
   public static void main(String[] args) throws Exception {
     try {
-      for (RuntimeData runtimeData : Confy.getRuntimeList()) {
-        Path downloadedPackage = Fetchy.download(runtimeData);
-        Zippy.unzip(downloadedPackage, runtimeData);
+      CommandData cd = Commandy.run(args);
+      Helpey.run(cd);
+      List<RuntimeData> runtimeList = Confy.run(cd);
+      for (RuntimeData runtimeData : runtimeList) {
+        Path downloadedPackage = Fetchy.run(cd, runtimeData);
+        Zippy.run(cd, downloadedPackage, runtimeData);
       }
+    } catch (AppException e) {
+      System.err.println(e.getMessage());
     } catch (Exception e) {
-      System.err.printf("An error has occurred: %s, %s", e.getClass(), e.getMessage());
+      System.err.printf("An error has occurred: %s, %s\n", e.getClass(), e.getMessage());
       LOG.log(Level.INFO, "", e);
     }
   }

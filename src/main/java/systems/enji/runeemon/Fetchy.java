@@ -16,14 +16,20 @@ import java.nio.file.Paths;
 class Fetchy {
 
   /**
-   * Downloads the given runtime.
+   * Downloads the given runtime and returns its path.
    */
-  static Path download(RuntimeData runtimeData) throws IOException, InterruptedException {
+  static Path run(CommandData cd, RuntimeData runtimeData) throws IOException, InterruptedException {
 
+    // check if I have to do anything
+    if (!cd.getFetch()) {
+      return null;
+    }
+
+    // compute path to download
     String downloadUrl = runtimeData.getDownloadUrl();
     String fileName = runtimeData.getName() + "-" + runtimeData.getVersion() + ".zip";
-    
     Path downloadedPackage = Paths.get("runtimes/downloaded", fileName);
+    
     if (Files.exists(downloadedPackage)) {
       System.out.printf("download already exists: %s\n", fileName);
       return downloadedPackage;

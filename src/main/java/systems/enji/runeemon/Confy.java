@@ -1,8 +1,15 @@
 package systems.enji.runeemon;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 /**
- * Provides configuration data for the other operations.
- * TODO: read from JSON config file (for better readability without IDE support); would require dependency...
+ * Provides runtime configuration data.
+ * TODO: read from JSON config file (for better readability without IDE support); would require dependency... 
+ * so use normal properties instead (one file per runtime)
  */
 class Confy {
 
@@ -63,10 +70,32 @@ class Confy {
   };
   
   /**
-   * Returns a list containing the meta data of all configured runtimes.
+   * Returns a list with meta data for the requested runtimes; 
    */
-  static RuntimeData[] getRuntimeList() {
-    return runtimeList;
+  static List<RuntimeData> run(CommandData cd) {
+    
+    // construct map for more efficient access by name
+    Map<String, RuntimeData> name2data = Arrays.stream(runtimeList)
+        .collect(Collectors.toMap(rt -> rt.getName(), rt -> rt));
+    
+    // construct return list with all requested runtimes 
+    List<RuntimeData> ret = new LinkedList<>();
+    
+    if (cd.getRuntimeNames().size() == 1 && CommandData.ALL_RUNTIMES.equals(cd.getRuntimeNames().get(0))) {
+      ret = Arrays.asList(runtimeList);
+    }
+    else {
+      for (String name : cd.getRuntimeNames()) {
+        RuntimeData rt = name2data.get(name.toLowerCase());
+        if (rt == null) {
+          throw new AppException(String.format("There is no configured runtime with the name '%s'.",  name));
+        }
+        ret.add(rt);
+      }
+    }
+    
+    return ret;
+    
   }
-
+  
 }

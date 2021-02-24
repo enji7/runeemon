@@ -77,4 +77,9 @@ final class RuntimeData {
     return config;
   }
   
+  @Override
+  public String toString() {
+    return this.name;
+  }
+  
 }
