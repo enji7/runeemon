@@ -19,7 +19,7 @@ class Zippy {
   /**
    * Unzips the given downloaded package, using meta data for the given runtime.
    */
-  static void run(CommandData cd, Path downloadedPackage, RuntimeData runtimeData) throws IOException {
+  static void run(CommandData cd, RuntimeData runtime) throws IOException {
     
     // check if I have to do anything
     if (!cd.getExtract()) {
@@ -27,24 +27,24 @@ class Zippy {
     }
 
     // prepare destination directory
-    File destDir = new File("runtimes/extracted", runtimeData.getName() + "-" + runtimeData.getVersion());
-    if (destDir.exists()) {
-      System.out.printf("already extracted: %s\n", destDir);
+    File extractDir = runtime.getExtractDir();
+    if (extractDir.exists()) {
+      System.out.printf("already extracted: %s\n", extractDir);
       return;
     }
-    destDir.mkdir();
+    extractDir.mkdir();
 
-    System.out.printf("extracting to %s...\n", destDir);
+    System.out.printf("extracting to %s...\n", extractDir);
     
     
-    try (ZipInputStream zis = new ZipInputStream(new FileInputStream(downloadedPackage.toFile()))) {
+    try (ZipInputStream zis = new ZipInputStream(new FileInputStream(runtime.getDownloadedPackage().toFile()))) {
 
       byte[] buffer = new byte[4096];
       
       ZipEntry zipEntry;
       while ((zipEntry = zis.getNextEntry()) != null) {
 
-        File zipEntryFile = zipEntryFile(destDir, zipEntry);
+        File zipEntryFile = zipEntryFile(extractDir, zipEntry);
         if (zipEntry.isDirectory()) {
           
           // create directory

@@ -16,7 +16,7 @@ class CommandData {
   private boolean fetch = false;
   private boolean extract = false;
   private boolean cleanDownloads = false;
-  private boolean cleanExtractions = false;
+  private boolean cleanExtracts = false;
   private boolean cleanDeployments = false;
   private boolean startForeground = false;
   private boolean startBackground = false;
@@ -77,13 +77,13 @@ class CommandData {
     return cleanDownloads;
   }
 
-  CommandData setCleanExtractions(boolean cleanExtractions) {
-    this.cleanExtractions = cleanExtractions;
+  CommandData setCleanExtracts(boolean cleanExtracts) {
+    this.cleanExtracts = cleanExtracts;
     return this;
   }
 
-  boolean getCleanExtractions() {
-    return cleanExtractions;
+  boolean getCleanExtracts() {
+    return cleanExtracts;
   }
 
   CommandData setCleanDeployments(boolean cleanDeployments) {

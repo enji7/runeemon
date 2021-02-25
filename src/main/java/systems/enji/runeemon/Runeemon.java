@@ -41,14 +41,17 @@ public class Runeemon {
   public static void main(String[] args) throws Exception {
     try {
       CommandData cd = Commandy.run(args);
-      Helpey.run(cd);
-      List<RuntimeData> runtimeList = Confy.run(cd);
-      for (RuntimeData runtimeData : runtimeList) {
-        Path downloadedPackage = Fetchy.run(cd, runtimeData);
-        Zippy.run(cd, downloadedPackage, runtimeData);
+      Helpy.run(cd);
+      List<RuntimeData> runtimes = Confy.run(cd);
+      Listy.run(cd, runtimes);
+      for (RuntimeData runtime : runtimes) {
+        Fetchy.run(cd, runtime);
+        Zippy.run(cd, runtime);
+        Cleany.run(cd, runtime);
       }
     } catch (AppException e) {
       System.err.println(e.getMessage());
+      LOG.log(Level.FINE, "", e);
     } catch (Exception e) {
       System.err.printf("An error has occurred: %s, %s\n", e.getClass(), e.getMessage());
       LOG.log(Level.INFO, "", e);

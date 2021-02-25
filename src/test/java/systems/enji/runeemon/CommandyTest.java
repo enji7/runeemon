@@ -26,6 +26,12 @@ public class CommandyTest {
     CommandData cd = Commandy.run(new String[]{ "xyz" });
     assertTrue(cd.getHelp());
   }
+
+  @Test
+  public void list() {
+    CommandData cd = Commandy.run(new String[]{ "list" });
+    assertTrue(cd.getList());
+  }
   
   @Test
   public void oneRuntime() {

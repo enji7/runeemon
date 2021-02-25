@@ -15,7 +15,12 @@ class Commandy {
     }
     
     if (args.length == 1) {
-      return new CommandData().setHelp(true);
+      if ("list".equals(args[0])) {
+        return new CommandData().setList(true).setRuntimeNames(List.of(CommandData.ALL_RUNTIMES));
+      }
+      else {
+        return new CommandData().setHelp(true);
+      }
     }
 
     CommandData cd = new CommandData();
@@ -27,6 +32,15 @@ class Commandy {
         case "extract":
           cd.setFetch(true);
           cd.setExtract(true);
+          break;
+        case "clean-extracts":
+          cd.setCleanExtracts(true);
+          break;
+        case "clean-downloads":
+          cd.setCleanDownloads(true);
+          break;
+        case "clean-deployments":
+          cd.setCleanDeployments(true);
           break;
         default:
           throw new AppException(String.format("unknown parameter: '%s'\n", args[i]));
