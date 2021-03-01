@@ -24,18 +24,16 @@ class Fetchy {
     }
 
     if (Files.exists(runtime.getDownloadedPackage())) {
-      System.out.printf("download already exists: %s\n", runtime.getDownloadedPackage().getFileName());
+      System.out.printf("downloaded: %s\n", runtime.getDownloadedPackage().toFile().getAbsolutePath());
       return;
     }
 
-    System.out.printf("downloading %s...\n", runtime.getDownloadedPackage().getFileName());
+    System.out.printf("downloading %s...\n", runtime.getDownloadedPackage().toFile().getAbsolutePath());
     HttpClient client = HttpClient.newBuilder().followRedirects(Redirect.NORMAL).build();
     HttpRequest request = HttpRequest.newBuilder().uri(URI.create(runtime.getDownloadUrl())).build();
     byte[] zip = client.send(request, BodyHandlers.ofByteArray()).body();
 
     Files.write(runtime.getDownloadedPackage(), zip);
-
-    System.out.println("finished downloading");
 
   }
 

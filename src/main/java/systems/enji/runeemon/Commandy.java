@@ -11,7 +11,9 @@ class Commandy {
   static CommandData run(String[] args) {
 
     if (args.length == 0) {
-      return new CommandData().setRuntimeNames(List.of(CommandData.ALL_RUNTIMES)).setFetch(true).setExtract(true).setInfo(true);
+      // TODO: print most common initial usage instead (fetch & extract & deploy & info), and refer to help
+      return new CommandData().setRuntimeNames(List.of(CommandData.ALL_RUNTIMES)).setFetch(true).setExtract(true)
+          .setDeploy(true).setInfo(true);
     }
     
     if (args.length == 1) {
@@ -32,6 +34,11 @@ class Commandy {
         case "extract":
           cd.setFetch(true);
           cd.setExtract(true);
+          break;
+        case "deploy":
+          cd.setFetch(true);
+          cd.setExtract(true);
+          cd.setDeploy(true);
           break;
         case "clean-extracts":
           cd.setCleanExtracts(true);

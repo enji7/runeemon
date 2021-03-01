@@ -15,6 +15,7 @@ class CommandData {
   private List<String> runtimeNames = new LinkedList<>();
   private boolean fetch = false;
   private boolean extract = false;
+  private boolean deploy = false;
   private boolean cleanDownloads = false;
   private boolean cleanExtracts = false;
   private boolean cleanDeployments = false;
@@ -66,6 +67,15 @@ class CommandData {
 
   boolean getExtract() {
     return extract;
+  }
+
+  public CommandData setDeploy(boolean deploy) {
+    this.deploy = deploy;
+    return this;
+  }
+
+  public boolean getDeploy() {
+    return deploy;
   }
 
   CommandData setCleanDownloads(boolean cleanDownloads) {

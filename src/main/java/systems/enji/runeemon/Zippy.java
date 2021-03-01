@@ -12,7 +12,9 @@ import java.util.zip.ZipInputStream;
 /**
  * Unzips a previously downloaded runtime into the extracted folder.
  * Who would have thought that this is still so cumbersome in 2021?
- * Kudos to https://www.baeldung.com/java-compress-and-uncompress for providing the basis.
+ * Kudos to https://www.baeldung.com/java-compress-and-uncompress for providing the basics.
+ * 
+ * TODO: chmod for start and stop scripts
  */
 class Zippy {
 
@@ -29,10 +31,10 @@ class Zippy {
     // prepare destination directory
     File extractDir = runtime.getExtractDir();
     if (extractDir.exists()) {
-      System.out.printf("already extracted: %s\n", extractDir);
+      System.out.printf("extracted: %s\n", extractDir.getAbsolutePath());
       return;
     }
-    System.out.printf("extracting to %s...\n", extractDir);
+    System.out.printf("extracting to %s...\n", extractDir.getAbsolutePath());
     
     // all runtimes are zipped with a root directory, which we will later rename
     extractDir = extractDir.getParentFile();
@@ -81,8 +83,6 @@ class Zippy {
     if (!runtime.getExtractDir().equals(extractedRootDir)) {
       Files.move(extractedRootDir.toPath(), runtime.getExtractDir().toPath());
     }
-    
-    System.out.println("extraction complete");
     
   }
 

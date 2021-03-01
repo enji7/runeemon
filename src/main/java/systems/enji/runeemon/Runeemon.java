@@ -47,6 +47,7 @@ public class Runeemon {
       for (RuntimeData runtime : runtimes) {
         Fetchy.run(cd, runtime);
         Zippy.run(cd, runtime);
+        Deploy.run(cd, runtime);
         Cleany.run(cd, runtime);
         Infy.run(cd, runtime);
       }
