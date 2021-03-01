@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 /**
  * Downloads and extracts a list of configured Java EE runtimes.
- * Requires no additional dependencies (TODO: we will need a dependency for JSON config...).
+ * Requires no additional dependencies.
  * 
  * TODO:
  * - more runtimes:
@@ -48,6 +48,7 @@ public class Runeemon {
         Fetchy.run(cd, runtime);
         Zippy.run(cd, runtime);
         Cleany.run(cd, runtime);
+        Infy.run(cd, runtime);
       }
     } catch (AppException e) {
       System.err.println(e.getMessage());

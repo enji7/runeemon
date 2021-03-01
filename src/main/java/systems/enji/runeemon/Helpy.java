@@ -21,6 +21,7 @@ class Helpy {
     System.out.println("extract: downloads and extracts the given runtimes (if not already done)");
     System.out.println("clean-downloads: removes the downloads and extractions for the given runtimes");
     System.out.println("clean-extracts: removes the uncompressed files for the given runtimes");
+    System.out.println("info: prints available information for the given runtimes");
     System.out.println();
     System.out.println("Examples");
     System.out.println("--------");

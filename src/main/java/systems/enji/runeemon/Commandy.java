@@ -42,6 +42,9 @@ class Commandy {
         case "clean-deployments":
           cd.setCleanDeployments(true);
           break;
+        case "info":
+          cd.setInfo(true);
+          break;
         default:
           throw new AppException(String.format("unknown parameter: '%s'\n", args[i]));
       }

@@ -4,6 +4,9 @@ import java.util.List;
 
 class Listy {
 
+  /**
+   * Lists the names of the given runtimes.
+   */
   static void run(CommandData cd, List<RuntimeData> runtimes) {
     if (!cd.getList()) {
       return;
