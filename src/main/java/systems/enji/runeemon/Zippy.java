@@ -13,8 +13,6 @@ import java.util.zip.ZipInputStream;
  * Unzips a previously downloaded runtime into the extracted folder.
  * Who would have thought that this is still so cumbersome in 2021?
  * Kudos to https://www.baeldung.com/java-compress-and-uncompress for providing the basics.
- * 
- * TODO: chmod for start and stop scripts
  */
 class Zippy {
 
@@ -84,6 +82,8 @@ class Zippy {
       Files.move(extractedRootDir.toPath(), runtime.getExtractDir().toPath());
     }
     
+    makeExecutable(runtime.getExtractDir(), runtime);
+    
   }
 
   /**
@@ -113,6 +113,33 @@ class Zippy {
         fos.write(buffer, 0, len);
       }
     }
+  }
+
+  /**
+   * Makes the start and stop commands of the given runtime executable.
+   */
+  private static void makeExecutable(File extractedRootDir, RuntimeData runtime) {
+    makeExecutable(extractedRootDir, runtime.getStartForegroundCommand());
+    makeExecutable(extractedRootDir, runtime.getStartCommand());
+    makeExecutable(extractedRootDir, runtime.getStopCommand());
+  }
+
+  /**
+   * Makes the given command (shell script) executable.
+   */
+  private static void makeExecutable(File extractedRootDir, String command) {
+    
+    // certain commands are configured with parameters, which have to be stripped off at this point
+    int spaceIndex = command.indexOf(" ");
+    if (spaceIndex != -1) {
+      command = command.substring(0, spaceIndex);
+    }
+    
+    if (command != null && !command.isBlank()) {
+      File commandFile = new File(extractedRootDir, command);
+      commandFile.setExecutable(true);
+    }
+    
   }
 
 }
