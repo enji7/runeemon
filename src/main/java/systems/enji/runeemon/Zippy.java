@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.Path;
+import java.nio.file.Files;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -32,10 +32,12 @@ class Zippy {
       System.out.printf("already extracted: %s\n", extractDir);
       return;
     }
-    extractDir.mkdir();
-
     System.out.printf("extracting to %s...\n", extractDir);
     
+    // all runtimes are zipped with a root directory, which we will later rename
+    extractDir = extractDir.getParentFile();
+    
+    String extractedRootName = null;
     
     try (ZipInputStream zis = new ZipInputStream(new FileInputStream(runtime.getDownloadedPackage().toFile()))) {
 
@@ -48,6 +50,10 @@ class Zippy {
         if (zipEntry.isDirectory()) {
           
           // create directory
+          
+          if (extractedRootName == null) {
+            extractedRootName = zipEntryFile.getName();
+          }
           
           if (!zipEntryFile.isDirectory() && !zipEntryFile.mkdirs()) {
             throw new RuntimeException("Could not create directory: " + zipEntryFile);
@@ -70,6 +76,12 @@ class Zippy {
       }
     }
 
+    // rename the root directory
+    File extractedRootDir = new File(extractDir, extractedRootName);
+    if (!runtime.getExtractDir().equals(extractedRootDir)) {
+      Files.move(extractedRootDir.toPath(), runtime.getExtractDir().toPath());
+    }
+    
     System.out.println("extraction complete");
     
   }
