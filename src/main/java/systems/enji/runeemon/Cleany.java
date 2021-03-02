@@ -11,20 +11,20 @@ class Cleany {
   static void run(CommandData cd, RuntimeData runtime) {
     
     if (cd.getCleanExtracts()) {
-      deleteDirectory(runtime);
+      deleteExtraction(runtime);
     }
     
     if (cd.getCleanDownloads()) {
-      deleteFile(runtime);
+      deleteDownload(runtime);
     }
     
     if (cd.getCleanDeployments()) {
-      // TODO: implement
+      deleteDeployments(runtime);
     }
     
   }
 
-  private static void deleteDirectory(RuntimeData runtime) {
+  private static void deleteExtraction(RuntimeData runtime) {
     if (runtime.getExtractDir().exists()) {
       try {
         Files.walk(runtime.getExtractDir().toPath())
@@ -38,7 +38,7 @@ class Cleany {
     System.out.println("deleted uncompressed files for " + runtime.getName());
   }
 
-  private static void deleteFile(RuntimeData runtime) {
+  private static void deleteDownload(RuntimeData runtime) {
     if (Files.exists(runtime.getDownloadedPackage())) {
       try {
         Files.delete(runtime.getDownloadedPackage());
@@ -49,4 +49,23 @@ class Cleany {
     System.out.println("deleted download file for " + runtime.getName());
   }
 
+  private static void deleteDeployments(RuntimeData runtime) {
+    File deploymentDir = new File(runtime.getExtractDir(), runtime.getDeploymentDir());
+    if (deploymentDir.exists()) {
+      try {
+        Files.list(deploymentDir.toPath())
+          .filter(p -> p.getFileName().toString().endsWith(".war"))
+          .forEach(p -> {
+            try {
+              Files.delete(p);
+            } catch (IOException e) {
+              throw new RuntimeException(e);
+            }
+          });
+      } catch (IOException e) {
+        throw new RuntimeException(e);
+      }
+    }
+  }
+  
 }
