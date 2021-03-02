@@ -13,10 +13,6 @@ import java.util.zip.ZipInputStream;
  * Unzips a previously downloaded runtime into the extracted folder.
  * Who would have thought that this is still so cumbersome in 2021?
  * Kudos to https://www.baeldung.com/java-compress-and-uncompress for providing the basics.
- * 
- * TODO: change directory structure:
- * - downloads
- * - runtimes (i.e., no "extracted" subdirectory)
  */
 class Zippy {
 
