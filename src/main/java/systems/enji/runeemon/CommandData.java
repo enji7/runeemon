@@ -19,6 +19,7 @@ class CommandData {
   private boolean cleanDownloads = false;
   private boolean cleanExtracts = false;
   private boolean cleanDeployments = false;
+  private boolean start = false;
   private boolean startForeground = false;
   private boolean startBackground = false;
   private boolean stop = false;
@@ -105,15 +106,24 @@ class CommandData {
     return cleanDeployments;
   }
 
+  CommandData setStart(boolean start) {
+    this.start = start;
+    return this;
+  }
+
+  boolean getStart() {
+    return start;
+  }
+
   CommandData setStartForeground(boolean startForeground) {
     this.startForeground = startForeground;
     return this;
   }
-
+  
   boolean getStartForeground() {
     return startForeground;
   }
-
+  
   CommandData setStartBackground(boolean startBackground) {
     this.startBackground = startBackground;
     return this;

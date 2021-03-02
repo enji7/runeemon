@@ -25,6 +25,14 @@ class Commandy {
       }
     }
 
+    CommandData cd = assembleCommands(args);
+    
+    // last parameter == runtime list
+    return cd.setRuntimeNames(Arrays.asList(args[args.length - 1].split(",")));
+    
+  }
+
+  private static CommandData assembleCommands(String[] args) {
     CommandData cd = new CommandData();
     for (int i = 0; i < args.length - 1; i++) {
       switch (args[i]) {
@@ -39,6 +47,27 @@ class Commandy {
           cd.setFetch(true);
           cd.setExtract(true);
           cd.setDeploy(true);
+          break;
+        case "start":
+          cd.setFetch(true);
+          cd.setExtract(true);
+          cd.setDeploy(true);
+          cd.setStart(true);
+          break;
+        case "start-bg":
+          cd.setFetch(true);
+          cd.setExtract(true);
+          cd.setDeploy(true);
+          cd.setStartBackground(true);
+          break;
+        case "start-fg":
+          cd.setFetch(true);
+          cd.setExtract(true);
+          cd.setDeploy(true);
+          cd.setStartForeground(true);
+          break;
+        case "stop":
+          cd.setStop(true);
           break;
         case "clean-extracts":
           cd.setCleanExtracts(true);
@@ -56,9 +85,7 @@ class Commandy {
           throw new AppException(String.format("unknown parameter: '%s'\n", args[i]));
       }
     }
-    // last parameter == runtime list
-    return cd.setRuntimeNames(Arrays.asList(args[args.length - 1].split(",")));
-    
+    return cd;
   }
   
 }

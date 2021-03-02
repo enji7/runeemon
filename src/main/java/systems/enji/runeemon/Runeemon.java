@@ -45,10 +45,11 @@ public class Runeemon {
       List<RuntimeData> runtimes = Confy.run(cd);
       Listy.run(cd, runtimes);
       for (RuntimeData runtime : runtimes) {
+        Cleany.run(cd, runtime);
         Fetchy.run(cd, runtime);
         Zippy.run(cd, runtime);
         Deploy.run(cd, runtime);
-        Cleany.run(cd, runtime);
+        Starty.run(cd, runtime);
         Infy.run(cd, runtime);
       }
     } catch (AppException e) {
