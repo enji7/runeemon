@@ -1,6 +1,5 @@
 package systems.enji.runeemon;
 
-import java.nio.file.Path;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -10,6 +9,7 @@ import java.util.logging.Logger;
  * Requires no additional dependencies.
  * 
  * TODO:
+ * - command line completion
  * - more runtimes:
  *   - Quarkus
  *   - Helidon

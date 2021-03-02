@@ -36,3 +36,16 @@ stop <runtime>
 info all
 info <runtime>
 ```
+
+## Making ping.war work
+
+out-of-the-box:
+
+ * Wildfly
+ * Payara
+ * TomEE
+
+requiring configuration:
+
+ * OpenLiberty
+   * server.xml: add `<feature>javaee-8.0</feature>`

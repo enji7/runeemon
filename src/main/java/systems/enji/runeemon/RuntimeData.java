@@ -44,8 +44,8 @@ final class RuntimeData {
     this.logDir = logDir;
     this.config = config;
     
-    this.downloadedPackage = Paths.get("runtimes/downloaded", String.format("%s-%s.%s", name, version, fileType));
-    this.extractDir = new File("runtimes/extracted", name + "-" + version);
+    this.downloadedPackage = Paths.get("downloads", String.format("%s-%s.%s", name, version, fileType));
+    this.extractDir = new File("runtimes", name + "-" + version);
 
   }
 
