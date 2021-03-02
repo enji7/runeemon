@@ -6,9 +6,11 @@ package systems.enji.runeemon;
 class Helpy {
 
   static void run(CommandData cd) {
+    
     if (!cd.getHelp()) {
       return;
     }
+    
     System.out.println("Usage");
     System.out.println("=====");
     System.out.println("./runeemon");
@@ -16,13 +18,14 @@ class Helpy {
     System.out.println();
     System.out.println("Commands");
     System.out.println("--------");
-    System.out.println("list:            lists the names of all configured runtimes");
-    System.out.println("fetch:           downloads the given runtimes (if not already done)");
-    System.out.println("extract:         downloads and extracts the given runtimes (if not already done)");
-    System.out.println("deploy:          deploys the WAR from the autodeploy directory to the given runtimes");
-    System.out.println("clean-downloads: removes the downloads and extractions for the given runtimes");
-    System.out.println("clean-extracts:  removes the uncompressed files for the given runtimes");
-    System.out.println("info:            prints available information for the given runtimes");
+    System.out.println("list:               lists the names of all configured runtimes");
+    System.out.println("fetch:              downloads the given runtimes (if not already done)");
+    System.out.println("extract:            downloads and extracts the given runtimes (if not already done)");
+    System.out.println("deploy:             deploys the WAR from the autodeploy directory to the given runtimes");
+    System.out.println("clean-downloads:    removes the downloads and extractions for the given runtimes");
+    System.out.println("clean-extracts:     removes the uncompressed files for the given runtimes");
+    System.out.println("clean-deployments:  removes the deployments (WARs) for the given runtimes");
+    System.out.println("info:               prints available information for the given runtimes");
     System.out.println();
     System.out.println("Examples");
     System.out.println("--------");
