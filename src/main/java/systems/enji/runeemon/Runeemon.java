@@ -7,11 +7,6 @@ import java.util.logging.Logger;
 /**
  * Downloads and extracts a list of configured Java EE runtimes.
  * Requires no additional dependencies.
- * 
- * TODO:
- * - more runtimes:
- *   - WebLogic
- *
  */
 public class Runeemon {
 

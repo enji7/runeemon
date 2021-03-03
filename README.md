@@ -1,5 +1,7 @@
 # runEEmon
 
+covers runtimes that can be freely downloaded (i.e., without login)
+
 see also: [Jakarta EE application server cheat sheet](https://rieckpil.de/cheatsheet-java-jakarta-ee-application-servers/)
 
 Gotta Catch 'Em All :)
