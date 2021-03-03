@@ -34,14 +34,14 @@ class Helpy {
     System.out.println();
     System.out.println("Examples");
     System.out.println("--------");
-    System.out.println("./runeemon");
-    System.out.println("  -> downloads and extracts all runtimes, and prints their usage infos");
-    System.out.println("./runeemon list");
+    System.out.println("runeemon list");
     System.out.println("  -> lists the names of all configured runtimes");
-    System.out.println("./runeemon hatch wildfly,payara");
+    System.out.println("runeemon hatch wildfly,payara");
     System.out.println("  -> downloads and extracts Wildfly and Payara");
-    System.out.println("./runeemon hatch all");
-    System.out.println("  -> downloads and extracts all configured runtimes");
+    System.out.println("runeemon hatch all");
+    System.out.println("  -> downloads and extracts *all* configured runtimes");
+    System.out.println("runeemon info wildfly");
+    System.out.println("  -> prints info for Wildfly");
     System.out.println();
     
   }

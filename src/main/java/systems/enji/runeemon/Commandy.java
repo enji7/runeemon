@@ -11,9 +11,7 @@ class Commandy {
   static CommandData run(String[] args) {
 
     if (args.length == 0) {
-      // TODO: print most common initial usage instead (fetch & hatch & deploy & info), and refer to help
-      return new CommandData().setRuntimeNames(List.of(CommandData.ALL_RUNTIMES)).setFetch(true).setHatch(true)
-          .setDeploy(true).setInfo(true);
+      return new CommandData().setHelp(true);
     }
     
     if (args.length == 1) {
