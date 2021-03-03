@@ -28,7 +28,11 @@ class Commandy {
     CommandData cd = assembleCommands(args);
     
     // last parameter == runtime list
-    return cd.setRuntimeNames(Arrays.asList(args[args.length - 1].split(",")));
+    cd.setRuntimeNames(Arrays.asList(args[args.length - 1].split(",")));
+    
+    validate(cd);
+    
+    return cd;
     
   }
 
@@ -87,5 +91,13 @@ class Commandy {
     }
     return cd;
   }
-  
+
+  private static void validate(CommandData cd) {
+    if (cd.getRuntimeNames().size() > 1) {
+      if (cd.getStart() || cd.getStartBackground() || cd.getStartForeground()) {
+        throw new AppException("cannot start more than one runtime at once");
+      }
+    }
+  }
+
 }

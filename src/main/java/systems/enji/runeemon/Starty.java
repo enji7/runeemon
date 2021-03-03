@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-// TODO: make sure that only one runtime can be started via command line
 // TODO: make it run under windows as well
 class Starty {
 

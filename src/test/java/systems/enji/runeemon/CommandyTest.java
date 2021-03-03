@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class CommandyTest {
@@ -43,6 +44,11 @@ public class CommandyTest {
   public void twoRuntimes() {
     CommandData cd = Commandy.run(new String[]{ "fetch", "wildfly,openliberty" });
     assertEquals(List.of("wildfly", "openliberty"), cd.getRuntimeNames());
+  }
+  
+  @Test
+  public void startTwoRuntimes() {
+    Assertions.assertThrows(AppException.class, () -> Commandy.run(new String[]{ "start", "wildfly,openliberty" }));
   }
   
 }
