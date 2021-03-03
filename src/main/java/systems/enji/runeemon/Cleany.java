@@ -10,11 +10,11 @@ class Cleany {
 
   static void run(CommandData cd, RuntimeData runtime) {
     
-    if (cd.getCleanExtracts()) {
+    if (cd.getCleanZoo()) {
       deleteExtraction(runtime);
     }
     
-    if (cd.getCleanDownloads()) {
+    if (cd.getCleanNest()) {
       deleteDownload(runtime);
     }
     

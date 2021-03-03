@@ -11,27 +11,12 @@ import java.util.logging.Logger;
  * TODO:
  * - command line completion
  * - more runtimes:
+ *   - WebLogic
+ * - mention frameworks in readme:
  *   - Quarkus
  *   - Helidon
  *   - Micronaut
  *   - KumuluzEE
- * - default operation:
- *   - for all configured runtimes (or those given on command line)... 
- *   - if already extracted: next runtime
- *   - if already downloaded: extract
- *   - else: download and extract
- * - clean extractions
- *   - for all configured runtimes (or those given on command line)...
- *   - rm extraction (if present)
- *   - download (if not available)
- *   - extract again
- * - clean download
- *   - for all configured runtimes (or those given on command line)...
- *   - rm download and extraction (if present)
- *   - download and extract again
- * - start & stop operations ("start payara")
- *   - should also output port, and perhaps also link to management interface
- * - a Jakarte EE / MP spec covering these different runtime aspects would be nice, too...
  *
  */
 public class Runeemon {

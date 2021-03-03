@@ -22,7 +22,7 @@ class Zippy {
   static void run(CommandData cd, RuntimeData runtime) throws IOException {
     
     // check if I have to do anything
-    if (!cd.getExtract()) {
+    if (!cd.getHatch()) {
       return;
     }
 

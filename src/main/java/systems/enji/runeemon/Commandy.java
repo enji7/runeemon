@@ -11,8 +11,8 @@ class Commandy {
   static CommandData run(String[] args) {
 
     if (args.length == 0) {
-      // TODO: print most common initial usage instead (fetch & extract & deploy & info), and refer to help
-      return new CommandData().setRuntimeNames(List.of(CommandData.ALL_RUNTIMES)).setFetch(true).setExtract(true)
+      // TODO: print most common initial usage instead (fetch & hatch & deploy & info), and refer to help
+      return new CommandData().setRuntimeNames(List.of(CommandData.ALL_RUNTIMES)).setFetch(true).setHatch(true)
           .setDeploy(true).setInfo(true);
     }
     
@@ -39,41 +39,41 @@ class Commandy {
         case "fetch":
           cd.setFetch(true);
           break;
-        case "extract":
+        case "hatch":
           cd.setFetch(true);
-          cd.setExtract(true);
+          cd.setHatch(true);
           break;
         case "deploy":
           cd.setFetch(true);
-          cd.setExtract(true);
+          cd.setHatch(true);
           cd.setDeploy(true);
           break;
         case "start":
           cd.setFetch(true);
-          cd.setExtract(true);
+          cd.setHatch(true);
           cd.setDeploy(true);
           cd.setStart(true);
           break;
         case "start-bg":
           cd.setFetch(true);
-          cd.setExtract(true);
+          cd.setHatch(true);
           cd.setDeploy(true);
           cd.setStartBackground(true);
           break;
         case "start-fg":
           cd.setFetch(true);
-          cd.setExtract(true);
+          cd.setHatch(true);
           cd.setDeploy(true);
           cd.setStartForeground(true);
           break;
         case "stop":
           cd.setStop(true);
           break;
-        case "clean-extracts":
-          cd.setCleanExtracts(true);
+        case "clean-zoo":
+          cd.setCleanZoo(true);
           break;
-        case "clean-downloads":
-          cd.setCleanDownloads(true);
+        case "clean-nest":
+          cd.setCleanNest(true);
           break;
         case "clean-deployments":
           cd.setCleanDeployments(true);

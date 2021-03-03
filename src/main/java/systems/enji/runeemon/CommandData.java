@@ -14,10 +14,10 @@ class CommandData {
   private boolean list = false;
   private List<String> runtimeNames = new LinkedList<>();
   private boolean fetch = false;
-  private boolean extract = false;
+  private boolean hatch = false;
   private boolean deploy = false;
-  private boolean cleanDownloads = false;
-  private boolean cleanExtracts = false;
+  private boolean cleanNest = false;
+  private boolean cleanZoo = false;
   private boolean cleanDeployments = false;
   private boolean start = false;
   private boolean startForeground = false;
@@ -61,13 +61,13 @@ class CommandData {
     return fetch;
   }
 
-  CommandData setExtract(boolean extract) {
-    this.extract = extract;
+  CommandData setHatch(boolean hatch) {
+    this.hatch = hatch;
     return this;
   }
 
-  boolean getExtract() {
-    return extract;
+  boolean getHatch() {
+    return hatch;
   }
 
   public CommandData setDeploy(boolean deploy) {
@@ -79,22 +79,22 @@ class CommandData {
     return deploy;
   }
 
-  CommandData setCleanDownloads(boolean cleanDownloads) {
-    this.cleanDownloads = cleanDownloads;
+  CommandData setCleanNest(boolean cleanNest) {
+    this.cleanNest = cleanNest;
     return this;
   }
 
-  boolean getCleanDownloads() {
-    return cleanDownloads;
+  boolean getCleanNest() {
+    return cleanNest;
   }
 
-  CommandData setCleanExtracts(boolean cleanExtracts) {
-    this.cleanExtracts = cleanExtracts;
+  CommandData setCleanZoo(boolean cleanZoo) {
+    this.cleanZoo = cleanZoo;
     return this;
   }
 
-  boolean getCleanExtracts() {
-    return cleanExtracts;
+  boolean getCleanZoo() {
+    return cleanZoo;
   }
 
   CommandData setCleanDeployments(boolean cleanDeployments) {

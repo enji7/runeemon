@@ -11,11 +11,13 @@ class Listy {
     if (!cd.getList()) {
       return;
     }
+    System.out.println();
     System.out.println("Available Runtimes");
     System.out.println("==================");
     for (RuntimeData runtime : runtimes) {
       System.out.println(runtime.getName());
     }
+    System.out.println();
   }
   
 }

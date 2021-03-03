@@ -28,7 +28,7 @@ class Fetchy {
       return;
     }
 
-    System.out.printf("downloading %s...\n", runtime.getDownloadedPackage().toFile().getAbsolutePath());
+    System.out.printf("downloading to %s...\n", runtime.getDownloadedPackage().toFile().getAbsolutePath());
     HttpClient client = HttpClient.newBuilder().followRedirects(Redirect.NORMAL).build();
     HttpRequest request = HttpRequest.newBuilder().uri(URI.create(runtime.getDownloadUrl())).build();
     byte[] zip = client.send(request, BodyHandlers.ofByteArray()).body();
