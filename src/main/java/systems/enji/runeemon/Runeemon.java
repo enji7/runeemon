@@ -9,14 +9,8 @@ import java.util.logging.Logger;
  * Requires no additional dependencies.
  * 
  * TODO:
- * - command line completion
  * - more runtimes:
  *   - WebLogic
- * - mention frameworks in readme:
- *   - Quarkus
- *   - Helidon
- *   - Micronaut
- *   - KumuluzEE
  *
  */
 public class Runeemon {

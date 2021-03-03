@@ -36,7 +36,6 @@ class Starty {
   private static void startBackground(RuntimeData runtime) {
     String command = runtime.getStartCommand();
     if (command == null || command.isBlank()) {
-      // TODO: perhaps runeemon can take care of this?
       System.out.printf("can't start %s in the background because it has no explicit background start command\n", runtime.getName());
       return;
     }
@@ -62,7 +61,6 @@ class Starty {
   }
   
   private static void exec(String command) {
-    // TODO: perhaps use ProcessBuilder instead?
     try {
       Process process = Runtime.getRuntime().exec(command);
       new BufferedReader(new InputStreamReader(process.getInputStream())).lines().forEach(System.out::println);

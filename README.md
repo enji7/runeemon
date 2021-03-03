@@ -49,3 +49,19 @@ requiring configuration:
 
  * OpenLiberty
    * server.xml: add `<feature>javaee-8.0</feature>`
+
+## Command Line Completion
+
+for Linux shell: auto-completion for Runeemon command line parameters (by pressing 'tab')
+
+`source ./completion.sh`
+
+add to ~/.bashrc for a single user, or to /etc/bash_completion/ for all users
+
+
+## Jakarta EE & MicroProfile Frameworks
+
+ *   - Quarkus
+ *   - Helidon
+ *   - Micronaut
+ *   - KumuluzEE

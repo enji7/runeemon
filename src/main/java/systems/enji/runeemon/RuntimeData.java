@@ -25,7 +25,6 @@ final class RuntimeData {
   
   // derived attributes
   private Path downloadedPackage;
-  // TODO: use either Path or File, not both
   private File extractDir;
 
   RuntimeData(String name, String version, String downloadUrl, String fileType, String deploymentDir, String startCommand,

@@ -1,0 +1,1 @@
+complete -W "list fetch hatch deploy start-bg start-fg start stop clean-nest clean-zoo clean-deployments info" runeemon.sh
