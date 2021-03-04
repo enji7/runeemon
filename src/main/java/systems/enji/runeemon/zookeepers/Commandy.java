@@ -8,6 +8,7 @@ import systems.enji.runeemon.data.CommandData;
 
 /**
  * Translates command line arguments to Runeemon commands.
+ * TODO: don't expect runtime names as comma-separated list, but as a space-separated list (easier for bash completion)
  */
 public class Commandy {
 
