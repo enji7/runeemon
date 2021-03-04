@@ -1,6 +1,6 @@
 package systems.enji.runeemon.zookeepers;
 
-import systems.enji.runeemon.CommandData;
+import systems.enji.runeemon.data.CommandData;
 
 /**
  * Prints usage info.

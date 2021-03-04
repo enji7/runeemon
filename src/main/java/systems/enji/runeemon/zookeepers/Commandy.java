@@ -3,8 +3,8 @@ package systems.enji.runeemon.zookeepers;
 import java.util.Arrays;
 import java.util.List;
 
-import systems.enji.runeemon.AppException;
-import systems.enji.runeemon.CommandData;
+import systems.enji.runeemon.data.AppException;
+import systems.enji.runeemon.data.CommandData;
 
 /**
  * Translates command line arguments to Runeemon commands.

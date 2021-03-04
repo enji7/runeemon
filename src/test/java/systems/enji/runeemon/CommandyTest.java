@@ -8,6 +8,8 @@ import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import systems.enji.runeemon.data.AppException;
+import systems.enji.runeemon.data.CommandData;
 import systems.enji.runeemon.zookeepers.Commandy;
 
 public class CommandyTest {

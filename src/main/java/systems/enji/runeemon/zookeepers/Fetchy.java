@@ -8,8 +8,8 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.nio.file.Files;
 
-import systems.enji.runeemon.CommandData;
-import systems.enji.runeemon.RuntimeData;
+import systems.enji.runeemon.data.CommandData;
+import systems.enji.runeemon.data.RuntimeData;
 
 /**
  * Downloads a runtime into the downloads folder.

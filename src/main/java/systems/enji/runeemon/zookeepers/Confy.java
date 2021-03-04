@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import systems.enji.runeemon.AppException;
-import systems.enji.runeemon.CommandData;
-import systems.enji.runeemon.RuntimeData;
+import systems.enji.runeemon.data.AppException;
+import systems.enji.runeemon.data.CommandData;
+import systems.enji.runeemon.data.RuntimeData;
 
 /**
  * Provides runtime configuration data.

@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import systems.enji.runeemon.CommandData;
-import systems.enji.runeemon.RuntimeData;
+import systems.enji.runeemon.data.CommandData;
+import systems.enji.runeemon.data.RuntimeData;
 
 // TODO: make it run under windows as well
 public class Starty {

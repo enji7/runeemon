@@ -1,4 +1,4 @@
-package systems.enji.runeemon;
+package systems.enji.runeemon.data;
 
 /**
  * Will be thrown in expected exceptional cases. 

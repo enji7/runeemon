@@ -6,8 +6,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
-import systems.enji.runeemon.CommandData;
-import systems.enji.runeemon.RuntimeData;
+import systems.enji.runeemon.data.CommandData;
+import systems.enji.runeemon.data.RuntimeData;
 
 public class Deploy {
 

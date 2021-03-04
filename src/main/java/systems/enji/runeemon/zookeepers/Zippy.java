@@ -9,8 +9,8 @@ import java.nio.file.Files;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-import systems.enji.runeemon.CommandData;
-import systems.enji.runeemon.RuntimeData;
+import systems.enji.runeemon.data.CommandData;
+import systems.enji.runeemon.data.RuntimeData;
 
 /**
  * Unzips a previously downloaded runtime into the extracted folder.
