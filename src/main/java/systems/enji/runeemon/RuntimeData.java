@@ -8,7 +8,7 @@ import java.nio.file.Paths;
  * Holds configuration data for a single runtime.
  * As soon as Java 17 LTS is released, use a record instead.
  */
-final class RuntimeData {
+public final class RuntimeData {
 
   private String name;
   private String version;
@@ -27,7 +27,7 @@ final class RuntimeData {
   private Path downloadedPackage;
   private File extractDir;
 
-  RuntimeData(String name, String version, String downloadUrl, String fileType, String deploymentDir, String startCommand,
+  public RuntimeData(String name, String version, String downloadUrl, String fileType, String deploymentDir, String startCommand,
       String stopCommand, String startForegroundCommand, String port, String welcomePage, String logDir, String config) {
     
     this.name = name;
@@ -51,98 +51,98 @@ final class RuntimeData {
   /**
    * Will be used for naming the download file and extracted folder.
    */
-  String getName() {
+  public String getName() {
     return name;
   }
 
   /**
    * Will be used for naming the download file and extracted folder.
    */
-  String getVersion() {
+  public String getVersion() {
     return version;
   }
 
   /**
    * URL from which the runtime can be downloaded.
    */
-  String getDownloadUrl() {
+  public String getDownloadUrl() {
     return downloadUrl;
   }
   
   /**
    * Type of the download file (usually 'zip').
    */
-  String getFileType() {
+  public String getFileType() {
     return fileType;
   }
 
   /**
    * Directory for auto-deployments.
    */
-  String getDeploymentDir() {
+  public String getDeploymentDir() {
     return deploymentDir;
   }
 
   /**
    * Command that starts the runtime in the background.
    */
-  String getStartCommand() {
+  public String getStartCommand() {
     return startCommand;
   }
 
   /**
    * Command that stops the runtime (after it has been started in the background).
    */
-  String getStopCommand() {
+  public String getStopCommand() {
     return stopCommand;
   }
 
   /**
    * Command that starts the runtime in the foreground.
    */
-  String getStartForegroundCommand() {
+  public String getStartForegroundCommand() {
     return startForegroundCommand;
   }
 
   /**
    * Port under which deployed applications are available.
    */
-  String getPort() {
+  public String getPort() {
     return port;
   }
 
   /**
    * URL to the welcome page.
    */
-  String getWelcomePage() {
+  public String getWelcomePage() {
     return welcomePage;
   }
 
   /**
    * Directory containing log files.
    */
-  String getLogDir() {
+  public String getLogDir() {
     return logDir;
   }
 
   /**
    * Configuration file or directory.
    */
-  String getConfig() {
+  public String getConfig() {
     return config;
   }
 
   /**
    * Compressed download file.
    */
-  Path getDownloadedPackage() {
+  public Path getDownloadedPackage() {
     return downloadedPackage;
   }
 
   /**
    * Direction containing the extracted runtime.
    */
-  File getExtractDir() {
+  public File getExtractDir() {
     return extractDir;
   }
 

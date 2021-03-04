@@ -1,4 +1,4 @@
-package systems.enji.runeemon;
+package systems.enji.runeemon.zookeepers;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,9 +6,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Comparator;
 
-class Cleany {
+import systems.enji.runeemon.AppException;
+import systems.enji.runeemon.CommandData;
+import systems.enji.runeemon.RuntimeData;
 
-  static void run(CommandData cd, RuntimeData runtime) {
+public class Cleany {
+
+  public static void run(CommandData cd, RuntimeData runtime) {
     
     if (cd.getCleanZoo()) {
       deleteExtraction(runtime);

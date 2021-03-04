@@ -1,14 +1,17 @@
-package systems.enji.runeemon;
+package systems.enji.runeemon.zookeepers;
 
 import java.util.Arrays;
 import java.util.List;
 
+import systems.enji.runeemon.AppException;
+import systems.enji.runeemon.CommandData;
+
 /**
  * Translates command line arguments to Runeemon commands.
  */
-class Commandy {
+public class Commandy {
 
-  static CommandData run(String[] args) {
+  public static CommandData run(String[] args) {
 
     if (args.length == 0) {
       return new CommandData().setHelp(true);

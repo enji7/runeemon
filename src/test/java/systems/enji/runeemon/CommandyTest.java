@@ -8,12 +8,14 @@ import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import systems.enji.runeemon.zookeepers.Commandy;
+
 public class CommandyTest {
 
   @Test
   public void empty() {
     CommandData cd = Commandy.run(new String[0]);
-    assertEquals(List.of(CommandData.ALL_RUNTIMES), cd.getRuntimeNames());
+    assertTrue(cd.getHelp());
   }
   
   @Test

@@ -1,16 +1,19 @@
-package systems.enji.runeemon;
+package systems.enji.runeemon.zookeepers;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import systems.enji.runeemon.CommandData;
+import systems.enji.runeemon.RuntimeData;
+
 // TODO: make it run under windows as well
-class Starty {
+public class Starty {
 
   /**
    * Starts the given runtime.
    */
-  static void run(CommandData cd, RuntimeData runtime) {
+  public static void run(CommandData cd, RuntimeData runtime) {
     if (cd.getStartBackground()) {
       startBackground(runtime);
     }

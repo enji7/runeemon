@@ -1,4 +1,4 @@
-package systems.enji.runeemon;
+package systems.enji.runeemon.zookeepers;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -6,12 +6,15 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
-class Deploy {
+import systems.enji.runeemon.CommandData;
+import systems.enji.runeemon.RuntimeData;
+
+public class Deploy {
 
   /**
    * Copies the WARs from Runeemon's autodeploy directory to the given runtime's autodeploy directory.
    */
-  static void run(CommandData cd, RuntimeData runtime) {
+  public static void run(CommandData cd, RuntimeData runtime) {
     if (!cd.getDeploy()) {
       return;
     }

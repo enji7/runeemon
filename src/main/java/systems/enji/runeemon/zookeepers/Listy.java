@@ -1,13 +1,16 @@
-package systems.enji.runeemon;
+package systems.enji.runeemon.zookeepers;
 
 import java.util.List;
 
-class Listy {
+import systems.enji.runeemon.CommandData;
+import systems.enji.runeemon.RuntimeData;
+
+public class Listy {
 
   /**
    * Lists the names of the given runtimes.
    */
-  static void run(CommandData cd, List<RuntimeData> runtimes) {
+  public static void run(CommandData cd, List<RuntimeData> runtimes) {
     if (!cd.getList()) {
       return;
     }

@@ -4,6 +4,17 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import systems.enji.runeemon.zookeepers.Cleany;
+import systems.enji.runeemon.zookeepers.Commandy;
+import systems.enji.runeemon.zookeepers.Confy;
+import systems.enji.runeemon.zookeepers.Deploy;
+import systems.enji.runeemon.zookeepers.Fetchy;
+import systems.enji.runeemon.zookeepers.Helpy;
+import systems.enji.runeemon.zookeepers.Infy;
+import systems.enji.runeemon.zookeepers.Listy;
+import systems.enji.runeemon.zookeepers.Starty;
+import systems.enji.runeemon.zookeepers.Zippy;
+
 /**
  * Downloads and extracts a list of configured Java EE runtimes.
  * Requires no additional dependencies.

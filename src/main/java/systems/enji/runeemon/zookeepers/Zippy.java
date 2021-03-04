@@ -1,4 +1,4 @@
-package systems.enji.runeemon;
+package systems.enji.runeemon.zookeepers;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -9,17 +9,20 @@ import java.nio.file.Files;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+import systems.enji.runeemon.CommandData;
+import systems.enji.runeemon.RuntimeData;
+
 /**
  * Unzips a previously downloaded runtime into the extracted folder.
  * Who would have thought that this is still so cumbersome in 2021?
  * Kudos to https://www.baeldung.com/java-compress-and-uncompress for providing the basics.
  */
-class Zippy {
+public class Zippy {
 
   /**
    * Unzips the given downloaded package, using meta data for the given runtime.
    */
-  static void run(CommandData cd, RuntimeData runtime) throws IOException {
+  public static void run(CommandData cd, RuntimeData runtime) throws IOException {
     
     // check if I have to do anything
     if (!cd.getHatch()) {

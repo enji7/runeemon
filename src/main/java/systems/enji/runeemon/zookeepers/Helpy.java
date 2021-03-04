@@ -1,11 +1,13 @@
-package systems.enji.runeemon;
+package systems.enji.runeemon.zookeepers;
+
+import systems.enji.runeemon.CommandData;
 
 /**
  * Prints usage info.
  */
-class Helpy {
+public class Helpy {
 
-  static void run(CommandData cd) {
+  public static void run(CommandData cd) {
     
     if (!cd.getHelp()) {
       return;

@@ -1,4 +1,4 @@
-package systems.enji.runeemon;
+package systems.enji.runeemon.zookeepers;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -6,12 +6,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import systems.enji.runeemon.AppException;
+import systems.enji.runeemon.CommandData;
+import systems.enji.runeemon.RuntimeData;
+
 /**
  * Provides runtime configuration data.
  * TODO: read from JSON config file (for better readability without IDE support); would require dependency... 
  * so use normal properties instead (one file per runtime)
  */
-class Confy {
+public class Confy {
 
   private static RuntimeData[] runtimeList = {
       
@@ -76,7 +80,7 @@ class Confy {
   /**
    * Returns a list with meta data for the requested runtimes; 
    */
-  static List<RuntimeData> run(CommandData cd) {
+  public static List<RuntimeData> run(CommandData cd) {
     
     // construct map for more efficient access by name
     Map<String, RuntimeData> name2data = Arrays.stream(runtimeList)

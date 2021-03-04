@@ -6,9 +6,9 @@ import java.util.List;
 /**
  * Data that is passed from one command to the other.
  */
-class CommandData {
+public class CommandData {
 
-  static final String ALL_RUNTIMES = "all";
+  public static final String ALL_RUNTIMES = "all";
   
   private boolean help = false;
   private boolean list = false;
@@ -25,48 +25,48 @@ class CommandData {
   private boolean stop = false;
   private boolean info = false;
   
-  CommandData setHelp(boolean help) {
+  public CommandData setHelp(boolean help) {
     this.help = help;
     return this;
   }
   
-  boolean getHelp() {
+  public boolean getHelp() {
     return help;
   }
 
-  boolean getList() {
-    return list;
-  }
-
-  CommandData setList(boolean list) {
+  public CommandData setList(boolean list) {
     this.list = list;
     return this;
   }
 
-  CommandData setRuntimeNames(List<String> runtimeNames) {
+  public boolean getList() {
+    return list;
+  }
+
+  public CommandData setRuntimeNames(List<String> runtimeNames) {
     this.runtimeNames = runtimeNames;
     return this;
   }
 
-  List<String> getRuntimeNames() {
+  public List<String> getRuntimeNames() {
     return runtimeNames;
   }
 
-  CommandData setFetch(boolean fetch) {
+  public CommandData setFetch(boolean fetch) {
     this.fetch = fetch;
     return this;
   }
 
-  boolean getFetch() {
+  public boolean getFetch() {
     return fetch;
   }
 
-  CommandData setHatch(boolean hatch) {
+  public CommandData setHatch(boolean hatch) {
     this.hatch = hatch;
     return this;
   }
 
-  boolean getHatch() {
+  public boolean getHatch() {
     return hatch;
   }
 
@@ -79,75 +79,75 @@ class CommandData {
     return deploy;
   }
 
-  CommandData setCleanNest(boolean cleanNest) {
+  public CommandData setCleanNest(boolean cleanNest) {
     this.cleanNest = cleanNest;
     return this;
   }
 
-  boolean getCleanNest() {
+  public boolean getCleanNest() {
     return cleanNest;
   }
 
-  CommandData setCleanZoo(boolean cleanZoo) {
+  public CommandData setCleanZoo(boolean cleanZoo) {
     this.cleanZoo = cleanZoo;
     return this;
   }
 
-  boolean getCleanZoo() {
+  public boolean getCleanZoo() {
     return cleanZoo;
   }
 
-  CommandData setCleanDeployments(boolean cleanDeployments) {
+  public CommandData setCleanDeployments(boolean cleanDeployments) {
     this.cleanDeployments = cleanDeployments;
     return this;
   }
 
-  boolean getCleanDeployments() {
+  public boolean getCleanDeployments() {
     return cleanDeployments;
   }
 
-  CommandData setStart(boolean start) {
+  public CommandData setStart(boolean start) {
     this.start = start;
     return this;
   }
 
-  boolean getStart() {
+  public boolean getStart() {
     return start;
   }
 
-  CommandData setStartForeground(boolean startForeground) {
+  public CommandData setStartForeground(boolean startForeground) {
     this.startForeground = startForeground;
     return this;
   }
   
-  boolean getStartForeground() {
+  public boolean getStartForeground() {
     return startForeground;
   }
   
-  CommandData setStartBackground(boolean startBackground) {
+  public CommandData setStartBackground(boolean startBackground) {
     this.startBackground = startBackground;
     return this;
   }
 
-  boolean getStartBackground() {
+  public boolean getStartBackground() {
     return startBackground;
   }
 
-  CommandData setStop(boolean stop) {
+  public CommandData setStop(boolean stop) {
     this.stop = stop;
     return this;
   }
 
-  boolean getStop() {
+  public boolean getStop() {
     return stop;
   }
 
-  CommandData setInfo(boolean info) {
+  public CommandData setInfo(boolean info) {
     this.info = info;
     return this;
   }
 
-  boolean getInfo() {
+  public boolean getInfo() {
     return info;
   }
 

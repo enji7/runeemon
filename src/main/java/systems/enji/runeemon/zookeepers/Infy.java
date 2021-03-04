@@ -1,13 +1,16 @@
-package systems.enji.runeemon;
+package systems.enji.runeemon.zookeepers;
 
 import java.io.File;
 
-class Infy {
+import systems.enji.runeemon.CommandData;
+import systems.enji.runeemon.RuntimeData;
+
+public class Infy {
 
   /**
    * Prints available information for the given runtime.
    */
-  static void run(CommandData cd, RuntimeData runtime) {
+  public static void run(CommandData cd, RuntimeData runtime) {
     
     if (!cd.getInfo()) {
       return;

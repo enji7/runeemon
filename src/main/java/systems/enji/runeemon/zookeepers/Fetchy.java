@@ -1,4 +1,4 @@
-package systems.enji.runeemon;
+package systems.enji.runeemon.zookeepers;
 
 import java.io.IOException;
 import java.net.URI;
@@ -8,15 +8,18 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.nio.file.Files;
 
+import systems.enji.runeemon.CommandData;
+import systems.enji.runeemon.RuntimeData;
+
 /**
  * Downloads a runtime into the downloads folder.
  */
-class Fetchy {
+public class Fetchy {
 
   /**
    * Downloads the given runtime and returns its path.
    */
-  static void run(CommandData cd, RuntimeData runtime) throws IOException, InterruptedException {
+  public static void run(CommandData cd, RuntimeData runtime) throws IOException, InterruptedException {
 
     // check if I have to do anything
     if (!cd.getFetch()) {
