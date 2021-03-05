@@ -33,5 +33,11 @@ public class ConfyTest {
     Assertions.assertEquals("wildfly", rts.get(0).getName());
     Assertions.assertEquals("payara", rts.get(1).getName());
   }
-  
+
+  @Test
+  public void fromProperties() throws Exception {
+    // TODO: improve test
+    Confy.runFromProperties(null);
+  }
+
 }

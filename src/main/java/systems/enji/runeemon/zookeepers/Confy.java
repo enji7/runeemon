@@ -1,9 +1,15 @@
 package systems.enji.runeemon.zookeepers;
 
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 import java.util.stream.Collectors;
 
 import systems.enji.runeemon.data.AppException;
@@ -105,6 +111,29 @@ public class Confy {
     }
     
     return ret;
+    
+  }
+
+  // TODO: invoke this from main class
+  public static List<RuntimeData> runFromProperties(CommandData cd) throws IOException {
+
+    List<RuntimeData> runtimes = new LinkedList<>();
+    
+    List<Path> configs = Files.list(Paths.get("config/runtimes"))
+        .filter(p -> !"template.properties".equals(p.getFileName().toString())).collect(Collectors.toList());
+    for (Path config : configs) {
+      Properties props = new Properties();
+      props.load(new FileReader(config.toFile()));
+      String configName = config.getFileName().toString();
+      String name = configName.substring(0, configName.indexOf(".properties"));
+      runtimes.add(
+          new RuntimeData(name, props.getProperty("version"), props.getProperty("downloadUrl"), props.getProperty("fileType"),
+              props.getProperty("deploymentDir"), props.getProperty("startCommand"), props.getProperty("stopCommand"), props.getProperty("startForegroundCommand"),
+              props.getProperty("port"), props.getProperty("welcomePage"), props.getProperty("logDir"), props.getProperty("config")));
+    }
+    
+    System.out.println(runtimes);
+    return runtimes;
     
   }
   
