@@ -8,6 +8,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.nio.file.Files;
 
+import systems.enji.runeemon.data.AppException;
 import systems.enji.runeemon.data.CommandData;
 import systems.enji.runeemon.data.RuntimeData;
 
@@ -19,7 +20,7 @@ public class Fetchy {
   /**
    * Downloads the given runtime and returns its path.
    */
-  public static void run(CommandData cd, RuntimeData runtime) throws IOException, InterruptedException {
+  public static void run(CommandData cd, RuntimeData runtime) throws IOException {
 
     // check if I have to do anything
     if (!cd.getFetch()) {
@@ -34,7 +35,13 @@ public class Fetchy {
     System.out.printf("downloading to %s...\n", runtime.getDownloadedPackage().toFile().getAbsolutePath());
     HttpClient client = HttpClient.newBuilder().followRedirects(Redirect.NORMAL).build();
     HttpRequest request = HttpRequest.newBuilder().uri(URI.create(runtime.getDownloadUrl())).build();
-    byte[] zip = client.send(request, BodyHandlers.ofByteArray()).body();
+    byte[] zip;
+    try {
+      zip = client.send(request, BodyHandlers.ofByteArray()).body();
+    }
+    catch (IOException | InterruptedException e) {
+      throw new AppException(String.format("could not download %s: %s", runtime.getName(), e.getClass()), e);
+    }
 
     Files.write(runtime.getDownloadedPackage(), zip);
 
