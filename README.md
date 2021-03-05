@@ -73,7 +73,6 @@ add to ~/.bashrc for a single user, or to /etc/bash_completion/ for all users
  * tests:
    * additional junit tests
    * perform usage tests
-   * broken download
  * make it run under Windows as well
  * code review
  * finish documentation
