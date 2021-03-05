@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 import systems.enji.runeemon.data.CommandData;
 import systems.enji.runeemon.data.RuntimeData;
 
-// TODO: make it run under windows as well
 public class Starty {
 
   /**
