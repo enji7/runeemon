@@ -1,6 +1,7 @@
 package systems.enji.runeemon.zookeepers;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 import systems.enji.runeemon.data.AppException;
@@ -8,16 +9,17 @@ import systems.enji.runeemon.data.CommandData;
 
 /**
  * Translates command line arguments to Runeemon commands.
- * TODO: don't expect runtime names as comma-separated list, but as a space-separated list (easier for bash completion)
  */
 public class Commandy {
 
   public static CommandData run(String[] args) {
 
+    // no args => print help
     if (args.length == 0) {
       return new CommandData().setHelp(true);
     }
     
+    // one arg => either a "list", or a cry for help
     if (args.length == 1) {
       if ("list".equals(args[0])) {
         return new CommandData().setList(true).setRuntimeNames(List.of(CommandData.ALL_RUNTIMES));
@@ -29,9 +31,6 @@ public class Commandy {
 
     CommandData cd = assembleCommands(args);
     
-    // last parameter == runtime list
-    cd.setRuntimeNames(Arrays.asList(args[args.length - 1].split(",")));
-    
     validate(cd);
     
     return cd;
@@ -40,7 +39,8 @@ public class Commandy {
 
   private static CommandData assembleCommands(String[] args) {
     CommandData cd = new CommandData();
-    for (int i = 0; i < args.length - 1; i++) {
+    List<String> runtimeNames = new LinkedList<>();
+    for (int i = 0; i < args.length; i++) {
       switch (args[i]) {
         case "fetch":
           cd.setFetch(true);
@@ -88,9 +88,12 @@ public class Commandy {
           cd.setInfo(true);
           break;
         default:
-          throw new AppException(String.format("unknown parameter: '%s'\n", args[i]));
+          // assume that this is a runtime name for now
+          runtimeNames.add(args[i]);
+          break;
       }
     }
+    cd.setRuntimeNames(runtimeNames);
     return cd;
   }
 

@@ -46,13 +46,13 @@ public class CommandyTest {
   
   @Test
   public void twoRuntimes() {
-    CommandData cd = Commandy.run(new String[]{ "fetch", "wildfly,openliberty" });
+    CommandData cd = Commandy.run(new String[]{ "fetch", "wildfly", "openliberty" });
     assertEquals(List.of("wildfly", "openliberty"), cd.getRuntimeNames());
   }
   
   @Test
   public void startTwoRuntimes() {
-    Assertions.assertThrows(AppException.class, () -> Commandy.run(new String[]{ "start", "wildfly,openliberty" }));
+    Assertions.assertThrows(AppException.class, () -> Commandy.run(new String[]{ "start", "wildfly", "openliberty" }));
   }
   
 }
