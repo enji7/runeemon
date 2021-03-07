@@ -69,8 +69,8 @@ public class Confy {
       
       new RuntimeData(
           "openliberty", 
-          "21.0.0.1", 
-          "https://public.dhe.ibm.com/ibmdl/export/pub/software/openliberty/runtime/release/2021-01-13_1459/openliberty-21.0.0.1.zip",
+          "21.0.0.2", 
+          "https://public.dhe.ibm.com/ibmdl/export/pub/software/openliberty/runtime/release/2021-02-09_1100/openliberty-javaee8-21.0.0.2.zip",
           "zip",
           "/usr/servers/defaultServer/dropins/",
           "/bin/server start",
