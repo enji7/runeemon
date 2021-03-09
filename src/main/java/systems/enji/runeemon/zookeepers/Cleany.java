@@ -10,9 +10,16 @@ import systems.enji.runeemon.data.AppException;
 import systems.enji.runeemon.data.CommandData;
 import systems.enji.runeemon.data.RuntimeData;
 
+/**
+ * Cleans up deployments, extractions, and downloads.
+ */
 public class Cleany {
 
   public static void run(CommandData cd, RuntimeData runtime) {
+    
+    if (cd.getCleanDeployments()) {
+      deleteDeployments(runtime);
+    }
     
     if (cd.getCleanZoo()) {
       deleteExtraction(runtime);
@@ -22,12 +29,27 @@ public class Cleany {
       deleteDownload(runtime);
     }
     
-    if (cd.getCleanDeployments()) {
-      deleteDeployments(runtime);
-    }
-    
   }
 
+  private static void deleteDeployments(RuntimeData runtime) {
+    File deploymentDir = new File(runtime.getExtractDir(), runtime.getDeploymentDir());
+    if (deploymentDir.exists()) {
+      try {
+        Files.list(deploymentDir.toPath())
+          .filter(p -> p.getFileName().toString().endsWith(".war"))
+          .forEach(p -> {
+            try {
+              Files.delete(p);
+            } catch (IOException e) {
+              throw new RuntimeException(e);
+            }
+          });
+      } catch (IOException e) {
+        throw new RuntimeException(e);
+      }
+    }
+  }
+  
   private static void deleteExtraction(RuntimeData runtime) {
     if (runtime.getExtractDir().exists()) {
       try {
@@ -53,23 +75,4 @@ public class Cleany {
     System.out.println("deleted download file for " + runtime.getName());
   }
 
-  private static void deleteDeployments(RuntimeData runtime) {
-    File deploymentDir = new File(runtime.getExtractDir(), runtime.getDeploymentDir());
-    if (deploymentDir.exists()) {
-      try {
-        Files.list(deploymentDir.toPath())
-          .filter(p -> p.getFileName().toString().endsWith(".war"))
-          .forEach(p -> {
-            try {
-              Files.delete(p);
-            } catch (IOException e) {
-              throw new RuntimeException(e);
-            }
-          });
-      } catch (IOException e) {
-        throw new RuntimeException(e);
-      }
-    }
-  }
-  
 }

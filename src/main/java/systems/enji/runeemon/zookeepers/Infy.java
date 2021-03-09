@@ -5,11 +5,11 @@ import java.io.File;
 import systems.enji.runeemon.data.CommandData;
 import systems.enji.runeemon.data.RuntimeData;
 
+/**
+ * Prints available information for a runtime.
+ */
 public class Infy {
 
-  /**
-   * Prints available information for the given runtime.
-   */
   public static void run(CommandData cd, RuntimeData runtime) {
     
     if (!cd.getInfo()) {

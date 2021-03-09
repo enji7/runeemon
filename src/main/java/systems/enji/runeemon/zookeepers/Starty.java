@@ -7,11 +7,11 @@ import java.io.InputStreamReader;
 import systems.enji.runeemon.data.CommandData;
 import systems.enji.runeemon.data.RuntimeData;
 
+/**
+ * Starts a runtime.
+ */
 public class Starty {
 
-  /**
-   * Starts the given runtime.
-   */
   public static void run(CommandData cd, RuntimeData runtime) {
     if (cd.getStartBackground()) {
       startBackground(runtime);

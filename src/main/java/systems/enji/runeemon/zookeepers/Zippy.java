@@ -19,9 +19,6 @@ import systems.enji.runeemon.data.RuntimeData;
  */
 public class Zippy {
 
-  /**
-   * Unzips the given downloaded package, using meta data for the given runtime.
-   */
   public static void run(CommandData cd, RuntimeData runtime) throws IOException {
     
     // check if I have to do anything

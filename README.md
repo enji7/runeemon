@@ -70,12 +70,11 @@ add to ~/.bashrc for a single user, or to /etc/bash_completion/ for all users
 
 ## TODO
 
- * tests:
-   * additional junit tests
-   * perform usage tests
- * make it run under Windows as well
- * code review
  * finish documentation
+ * license
  * version update
+ * publish
+ * parallel versions (test & document)
+ * make it run under Windows as well
  * make the shell script startable from anywhere
  

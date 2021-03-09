@@ -5,11 +5,11 @@ import java.util.List;
 import systems.enji.runeemon.data.CommandData;
 import systems.enji.runeemon.data.RuntimeData;
 
+/**
+ * Lists runtime names.
+ */
 public class Listy {
 
-  /**
-   * Lists the names of the given runtimes.
-   */
   public static void run(CommandData cd, List<RuntimeData> runtimes) {
     if (!cd.getList()) {
       return;

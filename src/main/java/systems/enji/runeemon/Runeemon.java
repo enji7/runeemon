@@ -19,8 +19,7 @@ import systems.enji.runeemon.zookeepers.Starty;
 import systems.enji.runeemon.zookeepers.Zippy;
 
 /**
- * Downloads and extracts a list of configured Java EE runtimes.
- * Requires no additional dependencies.
+ * Downloads, extracts, runs, cleans, and prints info about the configured Java EE runtimes.
  */
 public class Runeemon {
 

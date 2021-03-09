@@ -17,9 +17,6 @@ import systems.enji.runeemon.data.RuntimeData;
  */
 public class Fetchy {
 
-  /**
-   * Downloads the given runtime and returns its path.
-   */
   public static void run(CommandData cd, RuntimeData runtime) throws IOException {
 
     // check if I have to do anything

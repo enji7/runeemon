@@ -48,19 +48,18 @@ public class Confy {
     }
     
     for (String requestedConfig : requestedConfigNames) {
-      
+
+      // peel off ".properties"
+      String name = requestedConfig.substring(0, requestedConfig.indexOf(".properties"));
+
       Path configPath = configs.get(requestedConfig);
       
       if (configPath == null) {
-        throw new AppException(String.format("There is no configured runtime with the name '%s'.",  requestedConfig));
+        throw new AppException(String.format("There is no configured runtime with the name '%s'.",  name));
       }
       
       Properties props = new Properties();
       props.load(new FileReader(configPath.toFile()));
-      
-      // peel off ".properties"
-      String configName = configPath.getFileName().toString();
-      String name = configName.substring(0, configName.indexOf(".properties"));
       
       runtimes.add(new RuntimeData(name, props.getProperty("version"), props.getProperty("downloadUrl"),
           props.getProperty("fileType"), props.getProperty("deploymentDir"), props.getProperty("startCommand"),

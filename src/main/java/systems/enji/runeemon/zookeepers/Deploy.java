@@ -9,11 +9,11 @@ import java.nio.file.StandardCopyOption;
 import systems.enji.runeemon.data.CommandData;
 import systems.enji.runeemon.data.RuntimeData;
 
+/**
+ * Copies WARs from Runeemon's autodeploy directory to a runtime's autodeploy directory.
+ */
 public class Deploy {
 
-  /**
-   * Copies the WARs from Runeemon's autodeploy directory to the given runtime's autodeploy directory.
-   */
   public static void run(CommandData cd, RuntimeData runtime) {
     if (!cd.getDeploy()) {
       return;

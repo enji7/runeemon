@@ -11,6 +11,7 @@
   <packaging>jar</packaging>
 
   <dependencies>
+    <!-- neat: we only need test dependencies -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
