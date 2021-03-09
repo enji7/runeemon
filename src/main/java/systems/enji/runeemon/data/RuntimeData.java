@@ -27,6 +27,10 @@ public final class RuntimeData {
   private Path downloadedPackage;
   private File extractDir;
 
+  /**
+   * Even though this constructor is huge, identifying the parameters is not problem with IDE support.
+   * The alternative would have been a builder, which is overkill for internal usage.
+   */
   public RuntimeData(String name, String version, String downloadUrl, String fileType, String deploymentDir, String startCommand,
       String stopCommand, String startForegroundCommand, String port, String welcomePage, String logDir, String config) {
     
