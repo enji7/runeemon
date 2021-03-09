@@ -71,7 +71,6 @@ add to ~/.bashrc for a single user, or to /etc/bash_completion/ for all users
 ## TODO
 
  * finish documentation
- * license
  * version update
  * publish
  * parallel versions (test & document)
