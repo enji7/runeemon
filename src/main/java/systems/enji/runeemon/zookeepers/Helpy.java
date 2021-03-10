@@ -13,11 +13,12 @@ public class Helpy {
       return;
     }
     
+    String command = System.getProperty("os.name", "unknown").toLowerCase().contains("win") ? "runeemon.bat" : "./runeemon.sh";
+    
     System.out.println();
     System.out.println("Usage");
     System.out.println("=====");
-    System.out.println("./runeemon");
-    System.out.println("./runeemon <command> <comma-separated runtime names, or 'all'>");
+    System.out.println(command + " <command> <comma-separated runtime names, or 'all'>");
     System.out.println();
     System.out.println("Commands");
     System.out.println("--------");
@@ -36,13 +37,15 @@ public class Helpy {
     System.out.println();
     System.out.println("Examples");
     System.out.println("--------");
-    System.out.println("runeemon list");
-    System.out.println("  -> lists the names of all configured runtimes");
-    System.out.println("runeemon hatch wildfly,payara");
+    System.out.println(command + " start wildfly");
+    System.out.println("  -> downloads, extracts, deploys and runs WildFly (with the WAR from the autodeploy directory)");
+    System.out.println(command + " hatch wildfly payara");
     System.out.println("  -> downloads and extracts Wildfly and Payara");
-    System.out.println("runeemon hatch all");
+    System.out.println(command + " runeemon hatch all");
     System.out.println("  -> downloads and extracts *all* configured runtimes");
-    System.out.println("runeemon info wildfly");
+    System.out.println(command + " list");
+    System.out.println("  -> lists the names of all configured runtimes");
+    System.out.println(command + " info wildfly");
     System.out.println("  -> prints info for Wildfly");
     System.out.println();
     
