@@ -1,20 +1,21 @@
 # runEEmon
 
-*Gotta run 'em all!*
-
 runEEmon is a simple Java command line tool that assists in downloading, installing, deploying, and running the following [Jakarta EE](https://jakarta.ee) and [MicroProfile](https://microprofile.io) runtimes (aka application servers):
 
  * [Wildfly](https://www.wildfly.org/)
  * [Payara](https://www.payara.fish/)
- * [GlassFish](https://glassfish.org/)
  * [TomEE](https://tomee.apache.org/)
  * [OpenLiberty](https://openliberty.io/)
  
-According to the [Jakarta EE Survey 2020/2021](https://arjan-tijms.omnifaces.org/2021/02/jakarta-ee-survey-20202021-results.html), these are the most widely used, freely available application servers.
+According to the [OmniFaces Jakarta EE Survey 2020/2021](https://arjan-tijms.omnifaces.org/2021/02/jakarta-ee-survey-20202021-results.html), these are among the most widely used, freely available application servers.
 
-Additional runtimes can be configured via Java properties files in the *config* subdirectory.
+Additional runtimes can be configured via Java property files in the */config/runtimes/* subdirectory. In particular, [GlassFish](https://glassfish.org/) will be added as soon as it runs on JDK 11 (in version 6.1.0).
+
+*Gotta run 'em all!*
 
 ## Getting started
+
+runEEmon has been developed on Ubuntu Linux, and also tested on Windows 10.
 
 To run the examples below on your machine, take the following preparations first:
 
@@ -22,73 +23,73 @@ To run the examples below on your machine, take the following preparations first
 git clone https://github.com/enji7/runeemon
 cd runeemon
 mvn compile
+chmod u+x runeemon.sh
 ```
 
 [Ping](https://github.com/enji7/ping) is a simple Jakarta EE REST application that can be used for deployment tests.
 
 ## Usage examples
 
-If you are using Windows, replace `runeemon.sh` with `runeemon.bat` in the commands below.
+For Windows, replace `runeemon.sh` with `runeemon.bat` in the commands below.
 
 Download, extract and run WildFly (and also deploy a WAR that you may have placed into runEEmon's *autodeploy* directory):
 
-`./runeemon.sh start wildfly`
+ * `./runeemon.sh start wildfly`
 
 Download and extract Wildfly and Payara:
 
-`./runeemon.sh hatch wildfly payara`
+ * `./runeemon.sh hatch wildfly payara`
 
 Download and extract *all* supported runtimes:
 
-`./runeemon.sh hatch all`
+ * `./runeemon.sh hatch all`
+
+Print info for TomEE and OpenLiberty:
+
+ * `./runeemon.sh info tomee openliberty`
 
 ## Usage
 
 ```
-./runeemon.sh <command> <comma-separated runtime names, or 'all'>
+./runeemon.sh <command> <space-separated runtime names, or 'all'>
 
 Commands
 --------
 list               lists the names of all configured runtimes
 fetch              downloads the given runtimes into the 'nest' folder (if not already done)
-hatch              downloads and extracts the given runtimes into the 'zoo' folder (if not already done)
-deploy             deploys the WAR from the autodeploy directory to the given runtimes (fetch and hatch included)
+hatch              extracts the given runtimes into the 'zoo' folder (if not already done, fetch included)
+deploy             deploys the WAR from the 'autodeploy' directory to the given runtimes (fetch and hatch included)
 start-bg           starts the given runtime in the background (fetch, hatch and deploy included)
 start-fg           starts the given runtime in the foreground (fetch, hatch and deploy included)
 start              starts the given runtime in the background or foreground (fetch, hatch and deploy included)
 stop               stops the given runtime after it has been started in the background
-clean-nest         removes the downloads and extractions for the given runtimes
-clean-zoo          removes the uncompressed files for the given runtimes
 clean-deployments  removes the deployments (WARs) for the given runtimes
+clean-zoo          removes the extracted files for the given runtimes
+clean-nest         removes the downloads and extractions for the given runtimes
 info               prints available information for the given runtimes
 ```
 
 ## Command Line Completion
 
-for Linux shell: auto-completion for Runeemon command line parameters (by pressing 'tab')
+On the Linux shell, use the following command to enable auto-completion for runEEmon's command line parameters (by pressing 'Tab'):
 
-`source ./completion.sh`
+`source /path/to/completion.sh`
 
-add to ~/.bashrc for a single user, or to /etc/bash_completion/ for all users
+Add this command to `~/.bashrc` to enable auto-completion permanently for a single user.
 
-## Jakarta EE & MicroProfile Frameworks
+## What about Jakarta EE & MicroProfile frameworks?
 
- *   - Quarkus
- *   - Helidon
- *   - Micronaut
- *   - KumuluzEE
+The following frameworks are currently not supported by runEEmon:
 
-## Other
+ * [Quarkus](https://quarkus.io/)
+ * [Helidon](https://helidon.io/)
+ * [Micronaut](https://micronaut.io)
+ * [KumuluzEE](https://ee.kumuluz.com/)
 
-see also: [Jakarta EE application server cheat sheet](https://rieckpil.de/cheatsheet-java-jakarta-ee-application-servers/)
+This is due to the fact that these are no application servers in the traditional sense.
+Some of the relevant differences (which might not all apply to each of them) are:
 
-## TODO
+ * There is no download link. The required libraries for running an application are provided by the framework's specific Maven build.
+ * It is not possible to deploy a standard WAR. Instead, the application has to be built using the framework's specific infrastructure.
+ * The application is the entry point for starting up (instead of the server), which in turn pulls in the framework's specific infrastructure libraries.
 
- * add Glassfish
- * make it run under Windows as well
- * finish documentation
- * version update
- * publish
- * parallel versions (test & document)
- * make the shell script startable from anywhere
- 
