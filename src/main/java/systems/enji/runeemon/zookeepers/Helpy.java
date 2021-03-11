@@ -13,7 +13,7 @@ public class Helpy {
       return;
     }
     
-    String command = System.getProperty("os.name", "unknown").toLowerCase().contains("win") ? "runeemon.bat" : "./runeemon.sh";
+    String command = System.getProperty("os.name", "unknown").toLowerCase().contains("win") ? "runeemon.bat" : "./runeemon";
     
     System.out.println();
     System.out.println("Usage");

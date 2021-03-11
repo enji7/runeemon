@@ -23,35 +23,35 @@ To run the examples below on your machine, take the following preparations first
 git clone https://github.com/enji7/runeemon
 cd runeemon
 mvn compile
-chmod u+x runeemon.sh
+chmod u+x runeemon
 ```
 
 [Ping](https://github.com/enji7/ping) is a simple Jakarta EE REST application that can be used for deployment tests.
 
 ## Usage examples
 
-For Windows, replace `runeemon.sh` with `runeemon.bat` in the commands below.
+For Windows, replace `runeemon` with `runeemon.bat` in the commands below.
 
 Download, extract and run WildFly (and also deploy a WAR that you may have placed into runEEmon's *autodeploy* directory):
 
- * `./runeemon.sh start wildfly`
+ * `./runeemon start wildfly`
 
 Download and extract Wildfly and Payara:
 
- * `./runeemon.sh hatch wildfly payara`
+ * `./runeemon hatch wildfly payara`
 
 Download and extract *all* supported runtimes:
 
- * `./runeemon.sh hatch all`
+ * `./runeemon hatch all`
 
 Print info for TomEE and OpenLiberty:
 
- * `./runeemon.sh info tomee openliberty`
+ * `./runeemon info tomee openliberty`
 
 ## Usage
 
 ```
-./runeemon.sh <command> <space-separated runtime names, or 'all'>
+./runeemon <command> <space-separated runtime names, or 'all'>
 
 Commands
 --------
