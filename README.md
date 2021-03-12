@@ -15,7 +15,7 @@ Additional runtimes can be configured via Java property files in the */config/ru
 
 ## Getting started
 
-runEEmon has been developed on Ubuntu Linux, and also tested on Windows 10.
+runEEmon has been developed on Ubuntu Linux, and also tested (to some extent) on Windows 10.
 
 To run the examples below on your machine, take the following preparations first:
 
