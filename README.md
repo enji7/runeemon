@@ -77,7 +77,9 @@ On the Linux shell, use the following command to enable auto-completion for runE
 
 Add this command to `~/.bashrc` to enable auto-completion permanently for a single user.
 
-## What about Jakarta EE & MicroProfile frameworks?
+## FAQ
+
+### What about Jakarta EE & MicroProfile frameworks?
 
 The following frameworks are currently not supported by runEEmon:
 
@@ -93,3 +95,6 @@ Some of the relevant differences (which might not all apply to each of them) are
  * It is not possible to deploy a standard WAR. Instead, the application has to be built using the framework's specific infrastructure.
  * The application is the entry point for starting up (instead of the server), which in turn pulls in the framework's specific infrastructure libraries.
 
+### How to pronounce runEEmon?
+
+Like "runny mon", rhymes with "funny don".
