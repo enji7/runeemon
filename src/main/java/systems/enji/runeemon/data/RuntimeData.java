@@ -4,6 +4,8 @@ import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import systems.enji.runeemon.zookeepers.Ossy;
+
 /**
  * Holds configuration data for a single runtime.
  * As soon as Java 17 LTS is released, use a record instead.
@@ -15,9 +17,12 @@ public final class RuntimeData {
   private String downloadUrl;
   private String fileType;
   private String deploymentDir;
-  private String startCommand;
-  private String stopCommand; 
-  private String startForegroundCommand;
+  private String startCommandLinux;
+  private String stopCommandLinux; 
+  private String startForegroundCommandLinux;
+  private String startCommandWindows;
+  private String stopCommandWindows; 
+  private String startForegroundCommandWindows;
   private String port;
   private String welcomePage;
   private String logDir;
@@ -31,17 +36,22 @@ public final class RuntimeData {
    * Even though this constructor is huge, identifying the parameters is not problem with IDE support.
    * The alternative would have been a builder, which is overkill for internal usage.
    */
-  public RuntimeData(String name, String version, String downloadUrl, String fileType, String deploymentDir, String startCommand,
-      String stopCommand, String startForegroundCommand, String port, String welcomePage, String logDir, String config) {
+  public RuntimeData(String name, String version, String downloadUrl, String fileType, String deploymentDir,
+      String startCommandLinux, String stopCommandLinux, String startForegroundCommandLinux, String startCommandWindows,
+      String stopCommandWindows, String startForegroundCommandWindows, String port, String welcomePage, String logDir,
+      String config) {
     
     this.name = name;
     this.version = version;
     this.downloadUrl = downloadUrl;
     this.fileType = fileType;
     this.deploymentDir = deploymentDir;
-    this.startCommand = startCommand;
-    this.stopCommand = stopCommand;
-    this.startForegroundCommand = startForegroundCommand;
+    this.startCommandLinux = startCommandLinux;
+    this.stopCommandLinux = stopCommandLinux;
+    this.startForegroundCommandLinux = startForegroundCommandLinux;
+    this.startCommandWindows = startCommandWindows;
+    this.stopCommandWindows = stopCommandWindows;
+    this.startForegroundCommandWindows = startForegroundCommandWindows;
     this.port = port;
     this.welcomePage = welcomePage;
     this.logDir = logDir;
@@ -88,24 +98,24 @@ public final class RuntimeData {
   }
 
   /**
-   * Command that starts the runtime in the background.
+   * Command that starts the runtime in the background (matching the current OS).
    */
   public String getStartCommand() {
-    return startCommand;
+    return Ossy.isWindows() ? startCommandWindows : startCommandLinux;
   }
 
   /**
-   * Command that stops the runtime (after it has been started in the background).
+   * Command that stops the runtime (after it has been started in the background) (matching the current OS).
    */
   public String getStopCommand() {
-    return stopCommand;
+    return Ossy.isWindows() ? stopCommandWindows : stopCommandLinux;
   }
 
   /**
-   * Command that starts the runtime in the foreground.
+   * Command that starts the runtime in the foreground (matching the current OS).
    */
   public String getStartForegroundCommand() {
-    return startForegroundCommand;
+    return Ossy.isWindows() ? startForegroundCommandWindows : startForegroundCommandLinux;
   }
 
   /**

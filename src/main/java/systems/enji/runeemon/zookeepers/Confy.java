@@ -62,9 +62,11 @@ public class Confy {
       props.load(new FileReader(configPath.toFile()));
       
       runtimes.add(new RuntimeData(name, props.getProperty("version"), props.getProperty("downloadUrl"),
-          props.getProperty("fileType"), props.getProperty("deploymentDir"), props.getProperty("startCommand"),
-          props.getProperty("stopCommand"), props.getProperty("startForegroundCommand"), props.getProperty("port"),
-          props.getProperty("welcomePage"), props.getProperty("logDir"), props.getProperty("config")));      
+          props.getProperty("fileType"), props.getProperty("deploymentDir"), props.getProperty("startCommandLinux"),
+          props.getProperty("stopCommandLinux"), props.getProperty("startForegroundCommandLinux"),
+          props.getProperty("startCommandWindows"), props.getProperty("stopCommandWindows"),
+          props.getProperty("startForegroundCommandWindows"), props.getProperty("port"),
+          props.getProperty("welcomePage"), props.getProperty("logDir"), props.getProperty("config")));
 
     }
     
