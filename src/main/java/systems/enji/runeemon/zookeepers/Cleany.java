@@ -48,6 +48,7 @@ public class Cleany {
         throw new RuntimeException(e);
       }
     }
+    System.out.println("deleted deployments for " + runtime.getName());
   }
   
   private static void deleteExtraction(RuntimeData runtime) {
