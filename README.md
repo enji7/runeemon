@@ -69,6 +69,8 @@ clean-nest         removes the downloads and extractions for the given runtimes
 info               prints available information for the given runtimes
 ```
 
+Pro tip: You can also put the runtime names before the actual command.
+
 ## Command Line Completion
 
 On the Linux shell, use the following command to enable auto-completion for runEEmon's command line parameters (by pressing 'Tab'):
