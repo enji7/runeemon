@@ -82,7 +82,7 @@ Add this command to `~/.bashrc` to enable auto-completion permanently for a sing
 ## Directory Structure
 
 | Directory | Content |
-| --- | --- | --- |
+| --- | --- |
 | autodeploy | WARs that shall be deployed (initially empty) |
 | config/runtimes | one configuration file per supported runtime, and one template for adding new runtimes |
 | nest | downloaded runtime zips (initially empty) |
