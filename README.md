@@ -112,5 +112,5 @@ Like "runny mon", rhymes with "funny don".
 
 ### How can I express my runEEmon-induced euphoria?
 
-Clicking the *Star* button in the upper right corner would be very much appreciated.
+Clicking the *Star* button in the upper right corner would be very much appreciated. And if you like my [blog](https://enji.systems), you can follow me on [Twitter](https://twitter.com/EnjiSystems).
 
