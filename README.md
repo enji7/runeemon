@@ -79,6 +79,15 @@ On the Linux shell, use the following command to enable auto-completion for runE
 
 Add this command to `~/.bashrc` to enable auto-completion permanently for a single user.
 
+## Directory Structure
+
+| Directory | Content |
+| --- | --- | --- |
+| autodeploy | WARs that shall be deployed (initially empty) |
+| config/runtimes | one configuration file per supported runtime, and one template for adding new runtimes |
+| nest | downloaded runtime zips (initially empty) |
+| zoo | extracted runtimes (initially empty) |
+
 ## FAQ
 
 ### What about Jakarta EE & MicroProfile frameworks?
@@ -100,3 +109,8 @@ Some of the relevant differences (which might not all apply to each of them) are
 ### How to pronounce runEEmon?
 
 Like "runny mon", rhymes with "funny don".
+
+### How can I express my runEEmon-induced euphoria?
+
+Clicking the *Star* button in the upper right corner would be very much appreciated.
+
