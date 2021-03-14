@@ -106,6 +106,10 @@ Some of the relevant differences (which might not all apply to each of them) are
  * It is not possible to deploy a standard WAR. Instead, the application has to be built using the framework's specific infrastructure.
  * The application is the entry point for starting up (instead of the server), which in turn pulls in the framework's specific infrastructure libraries.
 
+### What about Codehaus Cargo?
+
+[Codehaus Cargo](https://codehaus-cargo.github.io/cargo/Home.html) is a great project with a similar purpose. Compared to runEEmon, it comes with a wider range of application servers and neat integration features. If your requirements exceed occasional experiments, be sure to check it out.
+
 ### How to pronounce runEEmon?
 
 Like "runny mon", rhymes with "funny don".
