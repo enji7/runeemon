@@ -11,6 +11,8 @@ According to the [OmniFaces Jakarta EE Survey 2020/2021](https://arjan-tijms.omn
 
 Additional runtimes can be configured via Java property files in the */config/runtimes/* subdirectory. In particular, [GlassFish](https://glassfish.org/) will be added as soon as it runs on JDK 11 (in version 6.1.0).
 
+See also [runEEmon (Cargo Edition)], an alternative version of runEEmon that is powered by Codehaus Cargo.
+
 *Gotta run 'em all!*
 
 ## Getting started
@@ -109,6 +111,8 @@ Some of the relevant differences (which might not all apply to each of them) are
 ### What about Codehaus Cargo?
 
 [Codehaus Cargo](https://codehaus-cargo.github.io/cargo/Home.html) is a great project with a similar purpose. Compared to runEEmon, it comes with a wider range of application servers and neat integration features. If your requirements exceed occasional experiments, be sure to check it out.
+
+See [runEEmon (Cargo Edition)](https://github.com/enji7/runeemon-cargo), an alternative version of runEEmon that is powered by Codehaus Cargo.
 
 ### How to pronounce runEEmon?
 
